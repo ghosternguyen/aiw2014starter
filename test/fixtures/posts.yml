@@ -2,8 +2,10 @@
 
 one:
   title: MyString
-  content: MyText
+  body: MyText
+  photo: MyString
 
 two:
   title: MyString
-  content: MyText
+  body: MyText
+  photo: MyString

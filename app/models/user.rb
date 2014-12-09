@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   #devise :database_authenticatable, :registerable, :confirmable, :recoverable, stretches: 20
-  has_many: posts
 end
