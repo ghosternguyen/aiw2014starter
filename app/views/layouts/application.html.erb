@@ -7,12 +7,513 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!-- device notice - add later
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
--->
+<header id="ccr-header">
+	<section id="ccr-nav-top" class="fullwidth">
+		<div class="">
+			<div class="container">
+				<nav class="top-menu">
+					<ul class="left-top-menu">
+						<li><%= link_to "Home", home_index_path %></li>
+						<li><%= link_to "Blog", blog_post_path %></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul><!-- /.left-top-menu -->
+  
+					<ul class="right-top-menu pull-right">
+						<li><%= link_to "Login", admin_user_session_path %></li>
+						<li><%= link_to "Register", new_admin_user_password_path %></li>
+						<li>
+							<form class="form-inline" role="form" action="#">
+								<input type="search" placeholder="Search here..." required>
+								  <button type="submit"><i class="fa fa-search"></i></button>
+							</form>
+						</li>
+					</ul> <!--  /.right-top-menu -->
+				</nav> <!-- /.top-menu -->
+			</div>
+		</div>	
+	</section> <!--  /#ccr-nav-top  -->
+
+
+	
+	
+	<section id="ccr-site-title">
+		<div class="container">
+			<div class="site-logo">
+				<a href="index.html" class="navbar-brand">
+					<img src="<%= image_path("logo-apple.png") %>" alt="Side Logo" />
+						<h1>Techie <span>History</span></h1>
+						<h3>Alltime Apple products</h3>
+				</a>
+			</div> <!-- / .navbar-header -->
+
+			<div class="add-space">
+				<img src="<%= image_path("banner.jpg") %>" width="728" height="135" />
+             
+			</div> <!-- / .adspace -->
+
+		</div>	<!-- /.container -->
+	</section> <!-- / #ccr-site-title -->
+
+
+
+	<section id="ccr-nav-main">
+		<nav class="main-menu">
+			<div class="container">
+
+				<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".ccr-nav-main">
+				            <i class="fa fa-bars"></i>
+			          	</button> <!-- /.navbar-toggle -->
+				</div> <!-- / .navbar-header -->
+
+				<div class="collapse navbar-collapse ccr-nav-main">
+					<ul class="nav navbar-nav">
+						<li><a class="active" href="index.html">Home</a></li>
+						<li class="dropdown">
+							<a href="#">Apple News<i class="fa fa-caret-down"></i></a>
+							<ul class="sub-menu">
+					          	<li><a href="blog.html">Hot News</a></li>
+					          	<li><a href="blog-2.html">Product News</a></li>
+							  	<li><a href="blog-3.html">Apple Events</a></li>
+					        </ul><!-- /.sub-menu -->
+						</li><!-- /.dropdown -->
+						<li class="dropdown"><a href="#">Category <i class="fa fa-caret-down"></i></a>
+							<ul class="sub-menu">
+								<li><a href="category-1.html">IPhone</a></li>
+								<li><a href="category-2.html">IPad</a></li>
+								<li><a href="#">IPod</a></li>
+								<li><a href="#">IWatch</a></li>
+								<li><a href="#">ITunes</a></li>
+								<li><a href="#">Mac</a></li>
+							</ul><!-- /.sub-menu -->
+						</li><!--  /.dropdown -->
+						<li><a href="contact.html">Contact</a></li>
+					</ul> <!-- /  .nav -->
+				</div><!-- /  .collapse .navbar-collapse  -->
+
+				<div id="currentTime" class="pull-right current-time">
+					<i class="fa fa-clock-o"></i> 12:10 pm
+
+
+				</div><!-- / #currentTime -->
+
+			</div>	<!-- /.container -->
+		</nav> <!-- /.main-menu -->
+	</section> <!-- / #ccr-nav-main -->
+
+
+
+	<section id="ccr-nav-below-main">
+		<nav class="second-menu">
+			<div class="container">
+
+				<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".ccr-nav-below-main">
+				            <i class="fa fa-bars"></i>
+			          	</button> <!-- /.navbar-toggle -->
+				</div> <!-- / .navbar-header -->
+
+				<div class="collapse navbar-collapse ccr-nav-below-main">
+					<ul class="nav navbar-nav">
+						<li><a href="#">iPhone</a></li>
+						<li><a href="#">iPod</a></li>
+						<li><a href="#">iPad</a></li>
+						<li><a href="#">iWatch</a></li>
+						<li><a href="#">iTunes</a></li>
+                        <li><a href="#">MacBook</a></li>
+                        <li><a href="#">Apple TV</a></li>
+					</ul> <!-- /.nav /.navbar-nav -->
+				</div>
+
+				<div class="ccr-language">
+					<ul>
+			            <li>Language:</li>
+			            <li><a href="#"><img src="<%= image_path("uk.png") %>" alt="UK">English</a></li>
+			            <li><a href="#"><img src="<%= image_path("france.png") %>" alt="France">France</a></li><li>
+			            <a href="#"><img src="<%= image_path("garman.png") %>" alt="Garman">Garman</a></li>
+          			</ul>
+				</div> <!-- /.ccr-language -->
+			</div><!-- /.container -->
+		</nav><!-- /.second-menu -->
+	</section><!-- / #ccr-nav-below-main -->
+
+</header> <!-- /#ccr-header -->
+
+
+<!-- ----Start Another Section Here--- -->
 
 <%= yield %>
 
+<!-- ----End Another Section Here--- -->
+
+
+
+<aside id="ccr-right-section" class="col-md-4 ccr-home">
+			<section id="social-buttons">
+				 <ul>
+				 	<li>
+				 		<a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+
+						<p><span class="bubble"></span><span class="count">202</span> Like</p>
+				 	</li>
+				 	<li>
+				 		<a href="#"  class="linkedin"><i class="fa fa-linkedin"></i></a>
+						<p><span class="bubble"></span><span class="count">202</span> Like</p>
+				 	</li>
+				 	<li>
+				 		<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+						<p><span class="bubble"></span><span class="count">202</span> Follow</p>
+				 	</li>
+				 	<li>
+				 		<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+						<p><span class="bubble"></span><span class="count">202</span> Like</p>
+				 	</li>
+				 </ul>
+					
+			</section>  <!-- /#social-buttons -->
+			
+			<section id="sidebar-popular-post">
+				<div class="ccr-gallery-ttile">
+					<span></span> 
+					<p><strong>Popular Post</strong></p>
+				</div> <!-- .ccr-gallery-ttile -->
+				<ul>
+					<li>
+						<img src="<%= image_path("x_1.jpg") %>" alt="Avatar">
+						<a href="#">Developers Start Designing Apps for Apple Watch</a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">11/18/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+					<li>
+						<img src="<%= image_path("x_2.jpg") %>" alt="Avatar">
+						<a href="#">Apple Adds UnionPay Payment Option for App Store Customers in China</a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">11/17/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+					<li>
+						<img src="<%= image_path("x_3.jpg") %>" alt="Avatar">
+						<a href="#">FY 14 Fourth Quarter Results Conference Call </a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">10/17/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+					<li>
+						<img src="<%= image_path("x_4.jpg") %>" alt="Avatar">
+						<a href="#">Apple Introduces iPad Air 2—The Thinnest</a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">10/16/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+					<li>
+						<img src="<%= image_path("x_5.jpg") %>" alt="Avatar">
+						<a href="#">Most Powerful iPad Ever</a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">10/16/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+				</ul>
+
+			</section> <!-- /#sidebar-popular-post -->
+
+			<section id="sidebar-video-post">
+				<div class="ccr-gallery-ttile">
+					<span></span> 
+					<p><strong>Video Post</strong></p>
+				</div> <!-- .ccr-gallery-ttile -->
+
+				<div class="sidebar-video">
+				<iframe width="340" height="195" src="//www.youtube.com/embed/zhZDGoQPNJM" frameborder="0" allowfullscreen></iframe>
+				iPhone 6 Clone Unboxing!
+				</div>
+				<div class="date-like-comment">
+					<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
+					<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>
+				</div>
+			</section>  <!-- /#sidebar-video-post -->
+
+			<section id="ccr-calender">
+
+				<table id="calendar">
+				<caption >February 2014</caption>
+				<thead data-iceapc="1">
+				<tr>
+					<th scope="col" title="Monday">M</th>
+					<th scope="col" title="Tuesday">T</th>
+					<th scope="col" title="Wednesday">W</th>
+					<th scope="col" title="Thursday">T</th>
+					<th scope="col" title="Friday">F</th>
+					<th scope="col" title="Saturday">S</th>
+					<th scope="col" title="Sunday">S</th>
+				</tr>
+				</thead>
+
+				<tfoot data-iceapc="4">
+				<tr data-iceapc="3">
+					<td colspan="3" id="prev"><a href="#" title="Previous">&laquo; Jan</a></td>
+					<td class="pad">&nbsp;</td>
+					<td colspan="3" id="next" class="pad"><a href="#" title="Next">Mar &raquo;</a></td>
+				</tr>
+				</tfoot>
+
+				<tbody>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td><td>1</td><td >2</td>
+				</tr>
+				<tr>
+					<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+				</tr>
+				<tr>
+					<td>10</td><td>11</td><td>12</td><td>13</td><td><a href="#" title="Post">14</a></td><td>15</td><td>16</td>
+				</tr>
+				<tr>
+					<td>17</td><td id="today">18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+				</tr>
+				<tr>
+					<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+					<td></td><td></td>
+				</tr>
+				</tbody>
+				</table>
+
+			</section>
+
+
+			<section id="sidebar-older-post">
+				<div class="ccr-gallery-ttile">
+					<span></span> 
+					<p><strong>Older Post</strong></p>
+				</div> <!-- .ccr-gallery-ttile -->
+				<ul>
+					<li>
+						<img src="<%= image_path("x_1.jpg") %>" alt="Avatar">
+						<a href="#">Developers Start Designing Apps for Apple Watch</a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">11/18/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+					<li>
+						<img src="<%= image_path("x_2.jpg") %>" alt="Avatar">
+						<a href="#">Apple Adds UnionPay Payment Option for App Store Customers in China</a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">11/17/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+					<li>
+						<img src="<%= image_path("x_3.jpg") %>" alt="Avatar">
+						<a href="#">FY 14 Fourth Quarter Results Conference Call </a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">10/17/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+					<li>
+						<img src="<%= image_path("x_4.jpg") %>" alt="Avatar">
+						<a href="#">Apple Introduces iPad Air 2—The Thinnest</a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">10/16/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+					<li>
+						<img src="<%= image_path("x_5.jpg") %>" alt="Avatar">
+						<a href="#">Most Powerful iPad Ever</a>
+						<div class="date-like-comment">
+							<span class="date"><time datetime="2014-02-17">10/16/2014</time></span>
+							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						</div>
+					</li>
+				</ul>
+
+			</section> <!-- /#sidebar-older-post -->
+
+			<section id="sidebar-entertainment-post">
+				<div class="ccr-gallery-ttile">
+					<span></span> 
+					<p><strong>Support</strong></p>
+				</div> <!-- .ccr-gallery-ttile -->
+
+				<div class="sidebar-entertainment">
+					<img src="<%= image_path("apple_support.jpg") %>" alt="entertainment">
+					<a href="#">Learn about Apple products, view online manuals, get the latest downloads, and more. Connect with other Apple users, or get service, support, and professional advice from Apple.</a>
+				</div>
+				<div class="date-like-comment">
+					<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
+					<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>
+				</div>
+			</section>  <!-- /#sidebar-entertainment-post -->
+
+
+			<section id="ccr-sidebar-add-place">
+				<div class="sidebar-add-place">
+                
+					<img src="<%= image_path("slide_x1.jpg") %>" width="370" height="250">
+				
+				</div> 
+			</section> <!-- /#ccr-sidebar-add-place -->
+
+
+			<section id="ccr-sidebar-newslater">
+				
+				<div class="ccr-gallery-ttile">
+					<span></span> 
+					<p><label for="sb-newslater"><strong>Newslater</strong></label></p>
+				</div> <!-- .ccr-gallery-ttile -->
+				
+				<div class="sidebar-newslater-form">
+					<form class="ccr-gallery-ttile" action="#">
+						<input type="email" id="sb-newslater" name="sb-newslater" placeholder="Enter your email address" required>
+						<button type="submit">Subscribe</button>
+
+					</form>
+				</div> <!-- /.sidebar-newslater-form -->
+				
+			</section> <!-- /#ccr-sidebar-newslater -->
+
+			<section id="ccr-find-on-fb">
+				<div class="find-fb-title">
+					<span><i class="fa fa-facebook"></i></span> Find us on Facebook
+				</div> <!-- /.find-fb-title -->
+				<div class="find-on-fb-body">
+
+					<div class="fb-like-box" data-href="https://www.facebook.com/codexcoderltd/" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+
+				</div> <!-- /.find-on-fb-body -->
+			</section> <!-- /#ccr-find-on-fb -->
+
+
+		</aside><!-- / .col-md-4  / #ccr-right-section -->
+
+
+	</div><!-- /.container -->
+</section><!-- / #ccr-main-section -->
+
+<aside id="ccr-footer-sidebar">
+	<div class="container">
+		<ul>
+			<li class="col-md-3">
+				<h5>About Us</h5>
+				<div class="about-us">
+                    <p>Nguyễn Bá Thanh</p>
+                    <p>Nguyễn Ngọc Tuyền</p>
+                    <p>Đào Quang Hoan</p>
+                    <p>Lưu Tiến Đạt</p>
+                    <p>Lê Thị Thủy</p>
+                    <p>Bùi Chí Thức</p>
+				</div>
+				<div class="site-logo">
+					<a href="index.html"><img src="<%= image_path("logo-apple.png") %>" alt="Side Logo" /><h1>Techie<span> History</span></h1></a>
+				</div> <!-- / .navbar-header -->
+				
+			</li>
+			<li class="col-md-3">
+				<h5>Popular Post</h5>
+				<ul>
+					<li>
+						<img src="<%= image_path("x_1.jpg") %>" alt="Avatar">
+						<a href="#">Developers Start Designing Apps for Apple Watch</a>
+					</li>
+					<li>
+						<img src="<%= image_path("x_2.jpg") %>" alt="Avatar">
+						<a href="#">Apple Adds UnionPay Payment Option for App Store Customers in China</a>
+					</li>
+					<li>
+						<img src="<%= image_path("x_3.jpg") %>" alt="Avatar">
+						<a href="#">FY 14 Fourth Quarter Results Conference Call</a>
+					</li>
+					<li>
+						<img src="<%= image_path("x_4.jpg") %>" alt="Avatar">
+						<a href="#">Apple Introduces iPad Air 2—The Thinnest</a>
+					</li>
+				</ul>
+				
+			</li>
+			<li class="col-md-3">
+				<h5>Recent Post</h5>
+				<ul>
+					<li>
+						<img src="<%= image_path("x_1.jpg") %>" alt="Avatar">
+						<a href="#">Developers Start Designing Apps for Apple Watch</a>
+					</li>
+					<li>
+						<img src="<%= image_path("x_2.jpg") %>" alt="Avatar">
+						<a href="#">Apple Adds UnionPay Payment Option for App Store Customers in China</a>
+					</li>
+					<li>
+						<img src="<%= image_path("x_3.jpg") %>" alt="Avatar">
+						<a href="#">FY 14 Fourth Quarter Results Conference Call</a>
+					</li>
+					<li>
+						<img src="<%= image_path("x_4.jpg") %>" alt="Avatar">
+						<a href="#">Apple Introduces iPad Air 2—The Thinnest</a>
+					</li>
+				</ul>
+				
+			</li>
+			<li class="col-md-3">
+				<h5>Tags</h5>
+				<div class="tagcloud">
+					<a href="#">Apple</a>
+					<a href="#">Ipad</a>
+					<a href="#">Iphone</a>
+					<a href="#">IMac</a>
+					<a href="#">Macbook</a>
+					<a href="#">Ipod</a>
+					<a href="#">Power Mac</a>
+					<a href="#">Apple Watch</a>
+					<a href="#">Technology</a>
+				</div>
+				
+			</li>
+		</ul>
+	</div>
+	
+</aside> <!-- /#ccr-footer-sidebar -->
+
+
+<footer id="ccr-footer">
+	<div class="container">
+	 	<div class="copyright">
+	 		&copy; 2014, Copyrights <a href="#">Group 15 - AIW 2014</a> - Hanoi University
+	 	</div> <!-- /.copyright -->
+
+	 	<div class="footer-social-icons">
+	 		<ul>
+	 			<li>
+	 				<a href="#"  class="google-plus"><i class="fa fa-google-plus"></i></a>
+	 			</li>
+	 			<li >
+	 				<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+	 			</li>
+	 			<li >
+	 				<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+	 			</li>
+	 			<li >
+	 				<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+	 			</li>
+	 		</ul>
+	 		
+	 	</div><!--  /.cocial-icons -->
+
+	</div> <!-- /.container -->
+</footer>  <!-- /#ccr-footer -->
 </body>
 </html>

@@ -26,5 +26,5 @@ ActiveAdmin.setup do |config|
 end
 
 ActiveAdmin.register Post do
-  permit_params :title, :body, :photo
+  #
 end
