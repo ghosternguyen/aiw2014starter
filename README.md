@@ -2,6 +2,8 @@ Techie History Alltime Apple products
 =====================================
 Home: [http://localhost:3000](http://localhost:3000)
 
+Blog: [http://localhost:3000/blog/post](http://localhost:3000/blog/post)
+
 Sample: [http://localhost:3000/home/sample](http://localhost:3000/home/sample)
 
 Admin: [http://localhost:3000/admin/](http://localhost:3000/admin/)
