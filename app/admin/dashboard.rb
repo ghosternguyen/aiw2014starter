@@ -31,3 +31,16 @@ ActiveAdmin.register_page "Dashboard" do
     # end
   end # content
 end
+
+# app/admin/calendar.rb
+ActiveAdmin.register_page "Calendar" do
+    menu priority: 2
+    content do
+        para "Hello World"
+    end
+end
+
+
+ActiveAdmin.register Post do
+    menu priority: 1, label: "Memeber Posts"
+end
