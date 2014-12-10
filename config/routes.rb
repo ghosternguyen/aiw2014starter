@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/sample'
 
+  get 'admin/custom'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
