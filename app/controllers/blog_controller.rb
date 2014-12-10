@@ -6,14 +6,14 @@ class BlogController < ApplicationController
   def create
   	@post = Post.new(post_params)
   	if @post.save
-  		redirect_to blog_post_path
+  		redirect_to home_index_path
   	end
   end
 
   def destroy
   	@post = Post.find(params[:id])
   	if @post.destroy
-  		redirect_to blog_post_path
+  		redirect_to home_index_path
   	end
   end
 
