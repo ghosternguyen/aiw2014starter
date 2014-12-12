@@ -1,15 +1,34 @@
 ActiveAdmin.register Post do
   menu :parent => "Manage Blog"
-  controller do
-    def create
-      @post = Post.new(post_params)
-      if @post.save
-        redirect_to admin_user_session_path
+
+  permit_params :category_id, :title, :body, :description, :image
+
+    show do |ad|
+      attributes_table do
+        row :id
+        row :category_id
+        row :title
+        row :body
+        row :description
+        row :image do
+          image_tag post.image_url(:thumb)
+        end
+        row :created_at
+        row :updated_at
       end
+      active_admin_comments
     end
 
-    def post_params
-      params.require(:post).permit(:title, :body, :photo)
+
+
+    form :html => {:multipart => true} do |f|
+      f.inputs do
+        f.input :category_id, :as => :select, :collection => Category.all, :label => "Category"
+        f.input :title, required: true
+        f.input :body, required: true
+        f.input :image, :as => :file
+        f.input :description, as: :wysihtml5
+      end
+      f.actions
     end
-  end
 end

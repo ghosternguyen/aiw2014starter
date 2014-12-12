@@ -1,24 +1,19 @@
 Rails.application.routes.draw do
-  get 'resumes/index'
-
-  get 'resumes/new'
-
-  get 'resumes/create'
-
-  get 'resumes/destroy'
-
   root 'home#index'
 
   get 'home/index'
-  get 'home/sample'
+  get 'home/news'
+  get 'home/contact'
+  
 
   get 'blog/post'
   post 'blog', to: 'blog#create', as: "blog_create_path"
   post 'blog', to: 'blog#create', as: 'blog_create'
   delete 'blog/:id', to: 'blog#destroy', as: 'blog_destroy'
 
-  get 'admin/custom'
-  get 'admin/assets'
+
+
+  get 'home/sample'
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

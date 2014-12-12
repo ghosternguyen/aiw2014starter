@@ -76,18 +76,11 @@ ActiveRecord::Schema.define(version: 20141212170044) do
   end
 
   create_table "posts", force: true do |t|
-    t.integer  "post_id"
+    t.integer  "category_id"
     t.string   "title"
     t.text     "body"
     t.text     "description"
     t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "resumes", force: true do |t|
-    t.string   "name"
-    t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
