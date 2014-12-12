@@ -439,8 +439,8 @@ line-height: 40px;
 }
 #ccr-site-title  .add-space{
 	text-align: center;
-	font-size: 3em;
-	color: #FFF;
+	font-size: 2em;
+	color: #5C5C3D;
 	background: #d5d5d5;
 	line-height: 80px;
 	width: 728px;
@@ -514,7 +514,7 @@ line-height: 40px;
 }
 .nav ul.sub-menu li a{
 	display: inline-block;
-	width: 180px;
+	width: 150px;
 	min-height: 40px;
 	border-top:1px solid rgba(255,255,255,.3);
 }
@@ -1029,7 +1029,7 @@ line-height: 40px;
 }
 #ccr-slide-main p a{
 	color: #fff;
-	font-size: 1.4em;
+	font-size: 1.71428571em;
 	padding-left: 30px;
 }
 #ccr-slide-main .carousel-indicators{
@@ -1169,7 +1169,7 @@ line-height: 40px;
 #ccr-sports-gallery  .like-comment-readmore{
 	position: absolute;
 	bottom: 0;
-	margin-bottom:10px;
+	margin-bottom:68px;
 	width: 100%;
 }
 #ccr-sports-gallery ul{
