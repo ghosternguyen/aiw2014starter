@@ -40,6 +40,11 @@ User's page - shows posts only from that user
   1. If you have any problem with SSL cetificate failed
     * Download this [cacert.pem](http://curl.haxx.se/ca/cacert.pem) and put it to `C:\RailsFTW418215\` might be `C:\RailsFTWxxxxxx\` depend on your version.
     * Run `set SSL_CERT_FILE=C:\RailsFTW418215\cacert.pem` in your Command Prompt
+  1.1 The above tip that requres every time you face with problem. To solve it forever you should:
+    - Download this [AddTrustExternalCARoot-2048.pem](https://raw.githubusercontent.com/rubygems/rubygems/master/lib/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem)
+    - With [cacert.pem](http://curl.haxx.se/ca/cacert.pem) above, you should type `gem which rubygems` to know where ruby installed.
+    - Found `C:\RailsFTW418215\lib\ruby\2.1.0\rubygems`, locate the folder name `ssl_certs`
+    - Copy 2 pems file to this folder, you'd see all the pem file here
   2. Else you have no error with SSL certificate
     * Run `gem install mysql2 -- '--with-mysql-lib="C:\xampp\mysql\lib" --with-mysql-include="C:\xampp\mysql\include"' ` in your Command Prompt depend on your Xampp Install Location
 6. re-Open your Gem file and add the line `gem 'mysql2'` ---> Save
