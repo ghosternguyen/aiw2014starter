@@ -13,4 +13,5 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'tzinfo-data'
-gem 'bcrypt-ruby', :require => "bcrypt"
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'rake', '10.3.2'
