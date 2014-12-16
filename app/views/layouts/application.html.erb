@@ -15,7 +15,8 @@
 					<ul class="left-top-menu">
 						<!--<li><%= link_to "Home", home_index_path, :class => "btn btn-danger"  %></li>-->
 						<li><%= link_to "Home", home_index_path %></li>
-						<li><%= link_to "Blog",  blog_post_path %></li>
+						<li><%= link_to "Products",  blog_post_path %></li>
+						<li><%= link_to "News",  home_news_path %></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul><!-- /.left-top-menu -->
 
@@ -41,11 +42,13 @@
 	<section id="ccr-site-title">
 		<div class="container">
 			<div class="site-logo">
-				<a href="index.html" class="navbar-brand">
-					<img src="<%= image_path("logo-apple.png") %>" alt="Side Logo" />
-						<h1>Techie <span>History</span></h1>
+				<%= link_to home_index_path, {:class => 'navbar-brand'} do %>
+				  	<%= image_tag('logo-apple.png') %>
+				  	<h1>Techie <span>History</span></h1>
 						<h3>Alltime Apple products</h3>
-				</a>
+				<% end %>
+				
+				
 			</div> <!-- / .navbar-header -->
 
 			<div class="add-space">
@@ -70,7 +73,7 @@
 
 				<div class="collapse navbar-collapse ccr-nav-main">
 					<ul class="nav navbar-nav">
-						<li><a class="active" href="index.html">Home</a></li>
+						<li><%= link_to "Home", home_index_path, {:class => 'active'} %></li>
 						<li class="dropdown">
 							<a href="#">Apple News<i class="fa fa-caret-down"></i></a>
 							<ul class="sub-menu">
@@ -102,6 +105,42 @@
 			</div>	<!-- /.container -->
 		</nav> <!-- /.main-menu -->
 	</section> <!-- / #ccr-nav-main -->
+
+	<section id="ccr-nav-below-main">
+		<nav class="second-menu">
+			<div class="container">
+
+				<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".ccr-nav-below-main">
+				            <i class="fa fa-bars"></i>
+			          	</button> <!-- /.navbar-toggle -->
+				</div> <!-- / .navbar-header -->
+
+				<div class="collapse navbar-collapse ccr-nav-below-main">
+					<ul class="nav navbar-nav">
+						<li><a href="#">iPhone</a></li>
+						<li><a href="#">iPod</a></li>
+						<li><a href="#">iPad</a></li>
+						<li><a href="#">iWatch</a></li>
+						<li><a href="#">iTunes</a></li>
+                        <li><a href="#">MacBook</a></li>
+                        <li><a href="#">Apple TV</a></li>
+					</ul> <!-- /.nav /.navbar-nav -->
+				</div>
+
+				<div class="ccr-language">
+					<ul> 
+						<li>Language:</li>
+						<li><a href="#"><img src="<%= image_path("uk.png") %>" alt="UK">English</a></li>
+						<li><a href="#"><img src="<%= image_path("france.png") %>" alt="France">France</a></li><li>
+						<a href="#"><img src="<%= image_path("garman.png") %>" alt="Garman">Garman</a></li>
+					</ul>
+				</div> <!-- /.ccr-language -->
+			</div><!-- /.container -->
+		</nav><!-- /.second-menu -->
+	</section><!-- / #ccr-nav-below-main -->
+
+</header> <!-- /#ccr-header -->
 
 
 

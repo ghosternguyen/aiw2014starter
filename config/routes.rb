@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/news'
   get 'home/contact'
+  get 'home/news_detail'
+
   
 
   get 'blog/post'
   post 'blog', to: 'blog#create', as: "blog_create_path"
   post 'blog', to: 'blog#create', as: 'blog_create'
   delete 'blog/:id', to: 'blog#destroy', as: 'blog_destroy'
+
+
 
 
 

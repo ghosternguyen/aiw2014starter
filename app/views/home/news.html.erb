@@ -1,0 +1,51 @@
+<section id="ccr-main-section">
+	<div class="container">
+
+
+		<section id="ccr-left-section" class="col-md-8">
+
+			<div class="current-page">
+				<%= link_to "Home", home_index_path %><i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i> Apple News
+			</div> <!-- / .current-page -->
+
+			<section id="ccr-blog">
+				<% @news.each do |news| %>
+				<article>
+					<figure class="blog-thumbnails">
+					<%=image_tag "news.image", :alt => news.image %>
+					</figure> <!-- /.blog-thumbnails -->
+					<div class="blog-text">
+						<h1><%= news.title %></h1>
+						<p>
+							<%= truncate(news.content, length: 300, separator: ' ' ) %> 
+						</p>
+
+
+						<div class="meta-data">					
+							<span class="read-more"><%= link_to "Read More", {:action => 'news_detail', :id => news.id}, :class => "read-more" %></span>
+						</div>
+					</div> <!-- /.blog-text -->
+					
+				</article>
+				<% end %>
+
+				
+				<div class="clearfix"></div>
+				<nav class="nav-paging">
+					<ul>
+						<li><a href="#pre"><i class="fa fa-chevron-left"></i></a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><span class="current">3</span></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#next"><i class="fa fa-chevron-right"></i></a></li>
+					</ul>
+				</nav>
+
+
+
+			</section> <!-- /#ccr-blog -->
+			
+		</section><!-- /.col-md-8 / #ccr-left-section -->
+

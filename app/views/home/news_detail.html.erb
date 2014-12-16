@@ -1,0 +1,236 @@
+<section id="ccr-main-section">
+	<div class="container">
+
+
+		<section id="ccr-left-section" class="col-md-8">
+
+			<div class="current-page">
+				<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i>
+				<%= link_to "News", home_news_path %> <i class="fa fa-angle-double-right"></i> <%= @news_detail.title %>
+			</div> <!-- / .current-page -->
+
+			<article id="ccr-article">
+				<h1><%= @news_detail.title %></h1>
+
+				<div class="article-like-comment-date">	
+					Posted by <%= @news_detail.credit %> on <%= @news_detail.created_at %> in <a href="#category">Category</a>
+
+					<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+					<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+										
+				</div> <!-- /.article-like-comment-date -->
+
+
+				<img src="img/slide/main-slide-1.jpg" alt="1st Image">
+				<p>
+					The iPad 2 is the second generation iPad, a tablet computer designed, developed and marketed by Apple Inc. It serves primarily as a platform for audio-visual media including books, news, movies, music, games, presentations and web content. The iPad 2 has a lithium-ion polymer battery that lasts up to 10 hours, a dual core Apple A5 processor and was the first iPad to feature VGA front-facing and 720p rear-facing cameras designed for FaceTime video calling.
+				</p>
+				<img src="img/article-image.jpg" alt="2nd Image">
+				<p>
+					The device is available initially with three storage sizes, 16, 32 and 64 GB and two varying connectivity options, Wi-Fi only or Wi-Fi and cellular. Each variation of the device is available with either a black or white front glass panel. However, upon the release of the 3rd generation iPad, only the 16 GB variation with two connectivity options and two front glass panel options is available. The iPad 2 was supported for more than 3 years by Apple Inc. It is also one of the longest iOS supported devices, till now, it has received more than 5 major iOS updates, from iOS 4.3 till iOS 8
+				</p>
+				<p>
+					Apple unveiled the device on March 2, 2011. Upon the announcement of the iPad 2, the original model of the iPad was discontinued. Sales of the iPad 2 online and at retail stores began in the United States on March 11. it was then released in 25 other Oceanian, North American and Western European countries on March 25 and released in eleven Asian countries as well as one African country on April 29. Subsequently on May 6 and 27, the device was released in three South American, six Eastern European and three Asian countries.
+				</p>
+				<p>
+					The device received mixed to positive reception from various blogs and publications. Although it was praised for its hardware improvement, such as the new Apple A5 chip, the software restriction on the iPad 2 and iOS in general drew criticism from various technology commentators. The device sold well in its first month of sales with 2.4–2.6 million units sold and 11.12 million units were sold in the third quarter of 2011.
+				</p>
+				<div class="article-tags">
+					Tag: <a href="#tag1">Entertainment</a>, <a href="#tag2">Holiwood</a>, <a href="#tag3">Movie</a>
+				</div>
+
+			</article> <!-- /#ccr-single-post -->
+
+
+			<section id="ccr-article-related-post">
+				<div class="ccr-gallery-ttile">
+						<span class="bottom"></span>
+						<p>Related Post</p>
+				</div> <!-- .ccr-gallery-ttile -->
+				<ul>
+						<li>
+							
+							<div class="ccr-thumbnail">
+								<img src="img/x_1.jpg" width="150" height="180">
+								<p><a href="#postlink">Read More</a></p>
+							</div>
+							<h5><a href="#">Developers Start Designing Apps ...</a></h5>
+						</li>
+						<li>
+							
+							<div class="ccr-thumbnail">
+								<img src="img/x_2.jpg" width="150" height="180">
+								<p><a href="#postlink">Read More</a></p>
+							</div>
+							<h5><a href="#">Apple Adds UnionPay Payment ...</a></h5>
+						</li>
+						<li>
+							
+							<div class="ccr-thumbnail">
+								<img src="img/x_3.jpg" width="150" height="180">
+								<p><a href="#postlink">Read More</a></p>
+							</div>
+							<h5><a href="#">FY 14 Fourth Quarter Results ...</a></h5>
+						</li>
+						<li>
+							
+							<div class="ccr-thumbnail">
+								<img src="img/x_4.jpg" width="150" height="180">
+								<p><a href="#postlink">Read More</a></p>
+							</div>
+							<h5><a href="#">Apple Introduces iPad Air 2 ...</a></h5>
+						</li>
+						<li>
+							
+							<div class="ccr-thumbnail">
+								<img src="img/anh3.jpg" width="150" height="180">
+								<p><a href="#postlink">Read More</a></p>
+							</div>
+							<h5><a href="#">Apple Introduces iPad mini 3...</a></h5>
+						</li>
+						<li>
+							
+							<div class="ccr-thumbnail">
+								<img src="img/anh4.jpg" width="150" height="180">
+								<p><a href="#postlink">Read More</a></p>
+							</div>
+							<h5><a href="#">Apple Pay Set to Transform Mobile ...</a></h5>
+						</li>
+						<li>
+							
+							<div class="ccr-thumbnail">
+								<img src="img/anh5.jpg" width="150" height="180">
+								<p><a href="#postlink">Read More</a></p>
+							</div>
+							<h5><a href="#">OS X Yosemite Now Available as ...</a></h5>
+						</li>
+						<li>
+							
+							<div class="ccr-thumbnail">
+								<img src="img/anh6.jpg" width="150" height="180">
+								<p><a href="#postlink">Read More</a></p>
+							</div>
+							<h5><a href="#">Apple Introduces 27-inch iMac ...</a></h5>
+						</li>
+					</ul>
+
+
+			</section> <!-- /#ccr-article-related-post -->
+
+			<section class="bottom-border"></section> <!-- /#bottom-border -->
+
+			<section id="ccr-commnet">
+				<div class="ccr-gallery-ttile">
+						<span class="bottom"></span>
+						<p>Comment</p>
+				</div> <!-- .ccr-gallery-ttile -->
+
+				<ol class="commentlist">
+					<li  class="comment">
+						<article>
+							<div class="comment-authore">
+								<img src="img/avatar2.png" alt="Avatar">
+								<a href="#">Lisa</a>
+							</div>
+							<div class="comment-content">
+								The iPad 2 is the second generation iPad, a tablet computer designed, developed and marketed by Apple Inc.
+							</div>
+							<div class="reply"><a href="#">Reply</a></div>
+							<div class="comment-meta"> 08 February; 2014</div>
+						</article>
+						<ul class="children">
+							<li class="comment">
+								<article>
+									<div class="comment-authore">
+										<img src="img/avatar.png" alt="Avatar">
+										<a href="#">Joly</a>
+									</div>
+									<div class="comment-content">
+										The device is available initially with three storage sizes, 16, 32 and 64 GB and two varying connectivity options, Wi-Fi only or Wi-Fi and cellular. Each variation of the device is available with either a black or white front glass panel.
+									</div>
+									<div class="reply"><a href="#">Reply</a></div>
+									<div class="comment-meta"> 08 February; 2014</div>
+								</article>
+								
+							</li> <!-- /.comment -->
+						</ul> <!-- /.children -->
+					</li> <!-- /.comment -->
+					<li  class="comment">
+						<article>
+							<div class="comment-authore">
+								<img src="img/avatar3.jpg" alt="Avatar">
+								<a href="#">Hena</a>
+							</div>
+							<div class="comment-content">
+								So amazing!
+							</div>
+							<div class="reply"><a href="#">Reply</a></div>
+							<div class="comment-meta"> 08 February; 2014</div>
+						</article>
+						<ul class="children">
+							<li class="comment">
+								<article>
+									<div class="comment-authore">
+										<img src="img/avatar.png" alt="Avatar">
+										<a href="#">Joly</a>
+									</div>
+									<div class="comment-content">
+										Wal-Mart's $299 price offering of the iPad is $100 less than what the iPad 2 was originally sold for at the bargain retailer's chain. 
+									</div>
+									<div class="reply"><a href="#">Reply</a></div>
+									<div class="comment-meta"> 08 February; 2014</div>
+								</article>
+								<ul class="children">
+									<li class="comment">
+										<article>
+											<div class="comment-authore">
+												<img src="img/avatar3.jpg" alt="Avatar">
+												<a href="#">Hena</a>
+											</div>
+											<div class="comment-content">
+												However, is only in place for the 16GB iPad 2, and will only be in place for 30 days. 
+											</div>
+											<div class="reply"><a href="#">Reply</a></div>
+											<div class="comment-meta"> 08 February; 2014</div>
+										</article>
+										
+									</li> <!-- /.comment -->
+								</ul> <!-- /.children -->
+								
+							</li> <!-- /.comment -->
+						</ul> <!-- /.children -->
+					</li> <!-- /.comment -->
+				</ol> <!-- /.commentlist -->
+
+
+
+			</section> <!-- /#ccr-commnet -->
+
+
+
+			<section class="bottom-border"></section> <!-- /#bottom-border -->
+
+			<section id="ccr-respond">
+				<div class="ccr-gallery-ttile">
+						<span class="bottom"></span>
+						<p>Post a Comment</p>
+				</div> <!-- .ccr-gallery-ttile -->
+				<div id="respond">
+					<form action="#" method="post" id="commentform">
+					<input id="author" name="author" type="text" placeholder="Name" value="" required>
+					<input id="email" name="email" type="email" placeholder="Email" value="" required>
+					<input id="url" name="url" type="url" placeholder="Website" value="">
+					<textarea id="comment" name="comment" placeholder="Message" rows="8" required></textarea>
+					<input name="submit" type="submit" id="submit" value="Submit">
+					
+					</form> <!-- /#commentform -->
+					
+				</div> <!-- /#respond -->
+
+			</section> <!-- /#ccr-respond -->
+
+
+				
+
+
+		</section><!-- /.col-md-8 / #ccr-left-section -->
