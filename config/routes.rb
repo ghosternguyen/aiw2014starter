@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
 
   get 'blog/post'
+  get 'blog/post_detail'
   post 'blog', to: 'blog#create', as: "blog_create_path"
   post 'blog', to: 'blog#create', as: 'blog_create'
   delete 'blog/:id', to: 'blog#destroy', as: 'blog_destroy'

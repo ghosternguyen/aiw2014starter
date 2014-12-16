@@ -22,11 +22,11 @@ ActiveAdmin.register Post do
 
 
     form :html => {:multipart => true} do |f|
-      f.inputs do
+      f.inputs "Create Post..." do
         f.input :category_id, :as => :select, :collection => Category.all, :label => "Category"
         f.input :title, required: true
         f.input :body, required: true
-        f.input :image, :as => :file
+        f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
         f.input :description, as: :wysihtml5
       end
       f.actions

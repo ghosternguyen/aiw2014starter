@@ -13,12 +13,12 @@ ActiveAdmin.register News do
     actions
   end
 
-  form do |f|
-    f.inputs do
+  form(:html => { :multipart => true }) do |f|
+    f.inputs "Create News..." do
       f.input :title
       f.input :content
       f.input :credit
-      f.input :image, :as => :file
+      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
      end
     f.actions
   end

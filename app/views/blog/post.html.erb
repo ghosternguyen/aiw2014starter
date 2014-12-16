@@ -5,128 +5,30 @@
 		<section id="ccr-left-section" class="col-md-8">
 
 			<div class="current-page">
-				<a href="index.html"><i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i></a> Hot News
+				<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i>  Products
+
+				
 			</div> <!-- / .current-page -->
 
 			<section id="ccr-blog">
-
+			<% @posts.each do |post| %>
 				<article>
 					<figure class="blog-thumbnails">
-					<img src="<%= image_path("anh1.jpg") %>" alt="Article Image ">
+					<%= image_tag post.image, :alt => post.image %>
 					</figure> <!-- /.blog-thumbnails -->
 					<div class="blog-text">
-						<h1><a href="single.html">Developers Start Designing Apps for Apple Watch</a></h1>
+						<h1><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h1>
 						<p>
-							Apple has announced the availability of WatchKit, software that gives developers a set of tools to easily create experiences designed specifically for Apple Watch. Developers can now begin developing WatchKit apps before the watch becomes available. 
+							<%= truncate(post.body, length: 300, separator: ' ' ) %>
 						</p>
 
-
-						<div class="meta-data">			
-							<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>			
-							<span class="read-more"><a href="#">Read More</a></span>
+						<div class="meta-data">					
+							<span class="read-more"><%= link_to "Read More", {:action => 'post_detail', :id => post.id}, :class => "read-more" %></span>
 						</div>
 					</div> <!-- /.blog-text -->
 					
 				</article>
-
-				<article>
-					<figure class="blog-thumbnails">
-					<img src="<%= image_path("anh2.jpg") %>" alt="Article Image ">
-					</figure> <!-- /.blog-thumbnails -->
-					<div class="blog-text">
-						<h1><a href="single.html">Apple Reports Fourth-Quarter Results</a></h1>
-						<p>
-							Apple has announced financial results for its fiscal 2014 fourth quarter ended September 27, 2014. The company posted quarterly revenue of $42.1 billion and quarterly net profit of $8.5 billion, or $1.42 per diluted share. 
-						</p>
-						<div class="meta-data">			
-							<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>			
-							<span class="read-more"><a href="#">Read More</a></span>
-						</div>
-					</div> <!-- /.blog-text -->
-					
-				</article>
-
-				<article>
-					<figure class="blog-thumbnails">
-					<img src="<%= image_path("anh3.jpg") %>" alt="Article Image ">
-					</figure> <!-- /.blog-thumbnails -->
-					<div class="blog-text">
-						<h1><a href="single.html">Apple Introduces iPad Air 2 and iPad mini 3</a></h1>
-						<p>
-							Apple has introduced iPad Air 2, the thinnest and most powerful iPad ever. The new iPad features an improved Retina display for enhanced contrast and richer, more vibrant colors, and better cameras for taking stunning photos and videos. Available in gold, silver, and space gray, iPad Air 2 and the new iPad mini 3 offer Touch ID and — in the U.S. — Apple Pay. 
-						</p>
-
-
-						<div class="meta-data">			
-							<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>			
-							<span class="read-more"><a href="#">Read More</a></span>
-						</div>
-					</div> <!-- /.blog-text -->
-					
-				</article>
-
-				<article>
-					<figure class="blog-thumbnails">
-					<img src="<%= image_path("anh4.jpg") %>" alt="Article Image ">
-					</figure> <!-- /.blog-thumbnails -->
-					<div class="blog-text">
-						<h1><a href="single.html">Apple Pay Set to Transform Mobile Payments Starting October 20</a></h1>
-						<p>
-							Apple has announced that customers can start making payments with the touch of a finger on October 20, when Apple Pay becomes available in the U.S. Apple Pay offers an easy, secure, and private way to pay using Touch ID on iPhone 6 and iPhone 6 Plus in stores and within apps. 
-						</p>
-
-
-						<div class="meta-data">			
-							<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>			
-							<span class="read-more"><a href="#">Read More</a></span>
-						</div>
-					</div> <!-- /.blog-text -->
-					
-				</article>
-
-				<article>
-					<figure class="blog-thumbnails">
-					<img src="<%= image_path("anh5.jpg") %>" alt="Article Image ">
-					</figure> <!-- /.blog-thumbnails -->
-					<div class="blog-text">
-						<h1><a href="single.html">OS X Yosemite Now Available as a Free Upgrade</a></h1>
-						<p>
-							Apple has announced that OS X Yosemite, the latest major release of the world’s most advanced desktop operating system, is now available as a free upgrade for Mac users from the Mac App Store. Yosemite delivers a fresh, modern look and introduces Continuity features that make it easy to hand off activities between Mac and iOS devices and even make and receive iPhone calls from your Mac. 
-						</p>
-
-
-						<div class="meta-data">			
-							<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>			
-							<span class="read-more"><a href="#">Read More</a></span>
-						</div>
-					</div> <!-- /.blog-text -->
-					
-				</article>
-
-				<article>
-					<figure class="blog-thumbnails">
-					<img src="<%= image_path("anh6.jpg") %>" alt="Article Image ">
-					</figure> <!-- /.blog-thumbnails -->
-					<div class="blog-text">
-						<h1><a href="single.html">Apple Introduces 27-inch iMac with Retina 5K Display</a></h1>
-						<p>
-							Apple has unveiled the 27-inch iMac with Retina 5K display, featuring the world’s highest-resolution display — with 14.7 million pixels. At this resolution, text appears sharper than ever, videos are more lifelike, and you can see new levels of detail in photos. 
-						</p>
-
-
-						<div class="meta-data">			
-							<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>			
-							<span class="read-more"><a href="#">Read More</a></span>
-						</div>
-					</div> <!-- /.blog-text -->
-					
-				</article>
+				<% end %>
 				
 				<div class="clearfix"></div>
 				<nav class="nav-paging">

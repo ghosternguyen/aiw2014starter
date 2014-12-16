@@ -1,24 +1,13 @@
 class BlogController < ApplicationController
+  def index
+    @posts = Post.all
+  end
+
   def post
-  	@post = Post.new
+    @posts = Post.all
   end
 
-  def create
-  	@post = Post.new(post_params)
-  	if @post.save
-  		redirect_to home_index_path
-  	end
+  def post_detail
+    @post_detail = Post.find(params[:id])
   end
-
-  def destroy
-  	@post = Post.find(params[:id])
-  	if @post.destroy
-  		redirect_to home_index_path
-  	end
-  end
-
-  def post_params
-  	params.require(:post).permit(:title, :body, :photo)
-  end
-  
 end

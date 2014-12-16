@@ -5,19 +5,19 @@
 		<section id="ccr-left-section" class="col-md-8">
 
 			<div class="current-page">
-				<%= link_to "Home", home_index_path %><i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i> Apple News
+				<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i> Apple News
 			</div> <!-- / .current-page -->
 
 			<section id="ccr-blog">
 				<% @news.each do |news| %>
 				<article>
 					<figure class="blog-thumbnails">
-					<%=image_tag "news.image", :alt => news.image %>
+					<%= image_tag news.image, :alt => news.image %>
 					</figure> <!-- /.blog-thumbnails -->
 					<div class="blog-text">
-						<h1><%= news.title %></h1>
+						<h1><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></h1>
 						<p>
-							<%= truncate(news.content, length: 300, separator: ' ' ) %> 
+							<%= truncate(news.content, length: 300, separator: ' ' ) %>
 						</p>
 
 

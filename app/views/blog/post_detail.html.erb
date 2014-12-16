@@ -6,24 +6,24 @@
 
 			<div class="current-page">
 				<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i>
-				<%= link_to "News", home_news_path %> <i class="fa fa-angle-double-right"></i> <%= @news_detail.title %>
+				<%= link_to "Products",  blog_post_path %> <i class="fa fa-angle-double-right"></i> <%= @post_detail.title %>
 			</div> <!-- / .current-page -->
 
 			<article id="ccr-article">
-				<h1><%= @news_detail.title %></h1>
+				<h1><%= @post_detail.title %></h1>
 
 				<div class="article-like-comment-date">	
-					Posted by <%= @news_detail.credit %> on <%= @news_detail.created_at %> in <a href="#category">Category</a>
+					Posted by on <%= @post_detail.created_at %> in <a href="#category">Category</a>
 
 					<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
 					<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
 										
 				</div> <!-- /.article-like-comment-date -->
 
-				<%= image_tag @news_detail.image, {:alt => @news_detail.image} %>
+				<%= image_tag @post_detail.image, {:alt => @post_detail.image} %>
 
 				<p>
-					<%= @news_detail.content %>
+					<%= @post_detail.body %>
 				</p>
 				
 				<div class="article-tags">

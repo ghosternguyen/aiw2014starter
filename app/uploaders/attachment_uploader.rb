@@ -47,5 +47,9 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def cache_dir
+    # should return path to cache dir
+    Rails.root.join 'tmp/uploads'
+  end
 
 end

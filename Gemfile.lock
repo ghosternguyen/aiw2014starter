@@ -218,7 +218,6 @@ DEPENDENCIES
   mini_magick
   mysql2 (~> 0.3.17)
   rails (= 4.1.6)
-  rake (= 10.3.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

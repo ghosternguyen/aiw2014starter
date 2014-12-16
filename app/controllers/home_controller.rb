@@ -1,10 +1,13 @@
 class HomeController < ApplicationController
   def index
-	@posts = Post.all
   end
 
   def news
   	@news = News.all
+  end
+
+  def news_detail
+	@news_detail = News.find(params[:id])
   end
 
   def categories
@@ -13,14 +16,6 @@ class HomeController < ApplicationController
 	@ipad = Category.where(:category_id => '2')
 	@ipod = Category.where(:category_id => '3')
 	@macbook = Category.where(:category_id => '4')
-  end
-
-  def news_detail
-	@news_detail = News.find(params[:id])
-  end
-
-  def post_details
-	@post_detail = Post.find(params[:id])
   end
 
   def search
