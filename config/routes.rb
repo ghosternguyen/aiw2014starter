@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 
   get 'blog/post'
   get 'blog/post_detail'
+  get 'blog/category'
+
+  resources :posts
+
+
   post 'blog', to: 'blog#create', as: "blog_create_path"
   post 'blog', to: 'blog#create', as: 'blog_create'
   delete 'blog/:id', to: 'blog#destroy', as: 'blog_destroy'

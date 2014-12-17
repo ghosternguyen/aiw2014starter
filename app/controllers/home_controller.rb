@@ -1,21 +1,25 @@
 class HomeController < ApplicationController
   def index
+  	@categories = Category.all
+  	@popularposts = Post.all.order('created_at DESC').limit(3)
+  	@recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
+  	@lastupdate = News.all.order('created_at DESC').limit(1)
   end
+
 
   def news
   	@news = News.all
+  	@categories = Category.all
+  	@popularposts = Post.all.order('created_at DESC').limit(3)
+  	@recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
   end
 
   def news_detail
 	@news_detail = News.find(params[:id])
-  end
-
-  def categories
-	@category = Category.all
-	@iphone = Category.where(:category_id => '1')
-	@ipad = Category.where(:category_id => '2')
-	@ipod = Category.where(:category_id => '3')
-	@macbook = Category.where(:category_id => '4')
+	@popularposts = Post.all.order('created_at DESC').limit(3)
+	@recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
+	@lastupdate = News.all.order('created_at DESC').limit(1)
+	@categories = Category.all
   end
 
   def search

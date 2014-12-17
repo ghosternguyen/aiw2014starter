@@ -84,12 +84,9 @@
 						</li><!-- /.dropdown -->
 						<li class="dropdown"><a href="#">Category <i class="fa fa-caret-down"></i></a>
 							<ul class="sub-menu">
-								<li><a href="category-1.html">IPhone</a></li>
-								<li><a href="category-2.html">IPad</a></li>
-								<li><a href="#">IPod</a></li>
-								<li><a href="#">IWatch</a></li>
-								<li><a href="#">ITunes</a></li>
-								<li><a href="#">Mac</a></li>
+								<% @categories.each do |category| %>
+								  	<li><%= link_to category.name, blog_category_path %></li>
+								<% end %>
 							</ul><!-- /.sub-menu -->
 						</li><!--  /.dropdown -->
 						<li><a href="contact.html">Contact</a></li>
@@ -118,13 +115,9 @@
 
 				<div class="collapse navbar-collapse ccr-nav-below-main">
 					<ul class="nav navbar-nav">
-						<li><a href="#">iPhone</a></li>
-						<li><a href="#">iPod</a></li>
-						<li><a href="#">iPad</a></li>
-						<li><a href="#">iWatch</a></li>
-						<li><a href="#">iTunes</a></li>
-                        <li><a href="#">MacBook</a></li>
-                        <li><a href="#">Apple TV</a></li>
+						<% @categories.each do |category| %>
+						  	<li><%= link_to category.name %></li>
+						<% end %>
 					</ul> <!-- /.nav /.navbar-nav -->
 				</div>
 
@@ -132,8 +125,7 @@
 					<ul> 
 						<li>Language:</li>
 						<li><a href="#"><img src="<%= image_path("uk.png") %>" alt="UK">English</a></li>
-						<li><a href="#"><img src="<%= image_path("france.png") %>" alt="France">France</a></li><li>
-						<a href="#"><img src="<%= image_path("garman.png") %>" alt="Garman">Garman</a></li>
+						<li><a href="#"><img src="<%= image_path("vn.png") %>" alt="France">Tiếng Việt</a></li>
 					</ul>
 				</div> <!-- /.ccr-language -->
 			</div><!-- /.container -->
@@ -191,42 +183,6 @@
 						<a href="#">Developers Start Designing Apps for Apple Watch</a>
 						<div class="date-like-comment">
 							<span class="date"><time datetime="2014-02-17">11/18/2014</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="<%= image_path("x_2.jpg") %>" alt="Avatar">
-						<a href="#">Apple Adds UnionPay Payment Option for App Store Customers in China</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">11/17/2014</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="<%= image_path("x_3.jpg") %>" alt="Avatar">
-						<a href="#">FY 14 Fourth Quarter Results Conference Call </a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">10/17/2014</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="<%= image_path("x_4.jpg") %>" alt="Avatar">
-						<a href="#">Apple Introduces iPad Air 2—The Thinnest</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">10/16/2014</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="<%= image_path("x_5.jpg") %>" alt="Avatar">
-						<a href="#">Most Powerful iPad Ever</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">10/16/2014</time></span>
 							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
 							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
 						</div>
@@ -309,42 +265,6 @@
 						<a href="#">Developers Start Designing Apps for Apple Watch</a>
 						<div class="date-like-comment">
 							<span class="date"><time datetime="2014-02-17">11/18/2014</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="<%= image_path("x_2.jpg") %>" alt="Avatar">
-						<a href="#">Apple Adds UnionPay Payment Option for App Store Customers in China</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">11/17/2014</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="<%= image_path("x_3.jpg") %>" alt="Avatar">
-						<a href="#">FY 14 Fourth Quarter Results Conference Call </a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">10/17/2014</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="<%= image_path("x_4.jpg") %>" alt="Avatar">
-						<a href="#">Apple Introduces iPad Air 2—The Thinnest</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">10/16/2014</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="<%= image_path("x_5.jpg") %>" alt="Avatar">
-						<a href="#">Most Powerful iPad Ever</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">10/16/2014</time></span>
 							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
 							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
 						</div>
@@ -435,44 +355,24 @@
 			<li class="col-md-3">
 				<h5>Popular Post</h5>
 				<ul>
+					<% @popularposts.each do |post| %>
 					<li>
-						<img src="<%= image_path("x_1.jpg") %>" alt="Avatar">
-						<a href="#">Developers Start Designing Apps for Apple Watch</a>
+						<%= image_tag post.image, :alt => post.image %>
+						<%= link_to post.title, blog_post_path(:id => post.id) %>
 					</li>
-					<li>
-						<img src="<%= image_path("x_2.jpg") %>" alt="Avatar">
-						<a href="#">Apple Adds UnionPay Payment Option for App Store Customers in China</a>
-					</li>
-					<li>
-						<img src="<%= image_path("x_3.jpg") %>" alt="Avatar">
-						<a href="#">FY 14 Fourth Quarter Results Conference Call</a>
-					</li>
-					<li>
-						<img src="<%= image_path("x_4.jpg") %>" alt="Avatar">
-						<a href="#">Apple Introduces iPad Air 2—The Thinnest</a>
-					</li>
+					<% end %>
 				</ul>
 				
 			</li>
 			<li class="col-md-3">
 				<h5>Recent Post</h5>
 				<ul>
+					<% @recentposts.each do |post| %>
 					<li>
-						<img src="<%= image_path("x_1.jpg") %>" alt="Avatar">
-						<a href="#">Developers Start Designing Apps for Apple Watch</a>
+						<%= image_tag post.image, :alt => post.image %>
+						<%= link_to post.title, blog_post_path(:id => post.id) %>
 					</li>
-					<li>
-						<img src="<%= image_path("x_2.jpg") %>" alt="Avatar">
-						<a href="#">Apple Adds UnionPay Payment Option for App Store Customers in China</a>
-					</li>
-					<li>
-						<img src="<%= image_path("x_3.jpg") %>" alt="Avatar">
-						<a href="#">FY 14 Fourth Quarter Results Conference Call</a>
-					</li>
-					<li>
-						<img src="<%= image_path("x_4.jpg") %>" alt="Avatar">
-						<a href="#">Apple Introduces iPad Air 2—The Thinnest</a>
-					</li>
+					<% end %>
 				</ul>
 				
 			</li>

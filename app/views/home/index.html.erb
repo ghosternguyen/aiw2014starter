@@ -11,11 +11,11 @@
 				<span class="update-ribon-right"></span> <!-- /.update-ribon-left -->
 				<div class="update-news-text" id="update-news-text">
 						<ul id="latestUpdate">  
-						    <li><a href="#">Developers Start Designing Apps for Apple Watch</a></li>
-						    <li><a href="#">Two</a></li>
-						    <li><a href="#">Three</a></li>
-						    <li><a href="#">Four</a></li>
-						    <li><a href="#">Five</a></li>
+						    <% @lastupdate.each do |news| %>
+							<li>
+								<%= link_to news.title, home_news_detail_path(:id => news.id) %>
+							</li>
+							<% end %>
 						</ul>
 				</div> <!-- /.update-text -->
 
