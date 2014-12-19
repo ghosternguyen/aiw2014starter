@@ -5,20 +5,31 @@ ActiveAdmin.register News do
 
   index do
     selectable_column
-    id_column
-    column :title
-    column :image
+    column :title, :sortable => :title do |news|
+      link_to news.title, [ :admin, news]
+    end
     column :created_at
-    column :updated_at
+    column :updated_at 
     actions
-  end
+  end 
+  show do
+    attributes_table do
+      row :title
+      row :content
+      row :image
+      row :credit
+    end
+  end 
 
   form(:html => { :multipart => true }) do |f|
     f.inputs "Create News..." do
       f.input :title
-      f.input :content
+      f.input :content, as: :wysihtml5
       f.input :credit
-      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
+      f.input :image, :as => :file, :hint => f.object.image.present? \
+        ? f.template.image_tag(f.object.image.url(:thumb))
+        : f.template.content_tag(:span, "No image yet")
+      f.input :image_cache, :as => :hidden
      end
     f.actions
   end

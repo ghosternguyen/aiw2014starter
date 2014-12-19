@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
-  	@categories = Category.all
+  	@men_cat = Category.all
+	@bar_cat = @men_cat.limit(5)
   	@popularposts = Post.all.order('created_at DESC').limit(3)
   	@recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
   	@lastupdate = News.all.order('created_at DESC').limit(1)
@@ -9,7 +10,8 @@ class HomeController < ApplicationController
 
   def news
   	@news = News.all
-  	@categories = Category.all
+  	@men_cat = Category.all
+  	@bar_cat = @men_cat.limit(5)
   	@popularposts = Post.all.order('created_at DESC').limit(3)
   	@recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
   end
@@ -19,12 +21,17 @@ class HomeController < ApplicationController
 	@popularposts = Post.all.order('created_at DESC').limit(3)
 	@recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
 	@lastupdate = News.all.order('created_at DESC').limit(1)
-	@categories = Category.all
+	@men_cat = Category.all
+	@bar_cat = @men_cat.limit(5)
   end
 
   def search
   end
 
   def sample
+  end
+
+  def category
+    @men_cat = Category.find(params[:category_id])
   end
 end

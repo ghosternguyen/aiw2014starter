@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   get 'blog/post_detail'
   get 'blog/category'
 
-  resources :posts
-
 
   post 'blog', to: 'blog#create', as: "blog_create_path"
   post 'blog', to: 'blog#create', as: 'blog_create'

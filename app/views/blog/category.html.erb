@@ -5,85 +5,36 @@
 		<section id="ccr-left-section" class="col-md-8">
 
 			<div class="current-page">
-				<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i> <%= link_to "Categories",  blog_category_path %> <i class="fa fa-angle-double-right"></i>
+				<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i> <%= link_to "Categories",  blog_category_path %> <i class="fa fa-angle-double-right"></i> <%= @category.name %>
 			</div> <!-- / .current-page -->
 
 				<section id="ccr-category-1">
 
-					
+					<% @firstpost.each do |post| %>
 					<div class="ccr-category-featured">
-						<div class="ccr-thumbnail"><img src="img/img1.jpg" alt="Thumb"></div>
+						<div class="ccr-thumbnail"><%= image_tag post.image, :alt => post.image %></div>
 						<article>
-						<h4>Let's feeling with new generation</h4>
-						iPhone 6 isn’t simply bigger — it’s better in every way. Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display. It’s one continuous form where hardware and software function in perfect unison, creating a new generation of iPhone that’s better by any measure...
+						<h4><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h4>
+							<%= truncate(post.body, length: 300, separator: ' ' ) %>
 							<div class="like-comment-readmore">
-								
-									<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
-									<a href="#"  class="comments"><i class="fa fa-comments-o"></i> 49</a>
-								
-									<a  class="read-more" href="#">Read More</a>
+
+									<%= link_to "Read More", {:action => 'post_detail', :id => post.id}, :class => "read-more" %>
 							</div> <!-- /.like-comment-readmore -->
 						</article>
 					</div> <!-- /#ccr-category-featured -->
+					<% end %>
 
 
 					<ul class="ccr-category-post">
+						<% @under1stpost.each do |post| %>
 						<li>
 							<div class="ccr-thumbnail">
-								<img src="img/img2.jpg" alt="thumbnail-small-1.png">
-								<p><a href="#postlink">Read More</a></p>
+								<%= image_tag post.image, :alt => post.image %>
+								<p><%= link_to "Read More", {:action => 'post_detail', :id => post.id} %></p>
 							</div>
-							<h5><a href="#">Iphone 6 review</a></h5>
+							<h5><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h5>
 						</li>
-						<li>
-							<div class="ccr-thumbnail">
-								<img src="img/img3.png" alt="thumbnail-small-1.png">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">iPhone 6 price, release date, review and specs</a></h5>
-						</li>
-						<li>
-							<div class="ccr-thumbnail">
-								<img src="img/img4.jpg" alt="thumbnail-small-1.png">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">The new features in new generation</a></h5>
-						</li>
-						<li>
-							<div class="ccr-thumbnail">
-								<img src="img/img5.jpg" alt="thumbnail-small-1.png">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Iphone 5C</a></h5>
-						</li>
-						<li>
-							<div class="ccr-thumbnail">
-								<img src="img/img6.jpg" alt="thumbnail-small-1.png">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">iPhone 5 review - Trusted Reviews </a></h5>
-						</li>
-						<li>
-							<div class="ccr-thumbnail">
-								<img src="img/img7.jpg" alt="thumbnail-small-1.png">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Publish date for iphone 5</a></h5>
-						</li>
-						<li>
-							<div class="ccr-thumbnail">
-								<img src="img/img8.jpg" alt="thumbnail-small-1.png">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Release design and feature</a></h5>
-						</li>
-						<li>
-							<div class="ccr-thumbnail">
-								<img src="img/img9.jpg" alt="thumbnail-small-1.png">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">IPhone review</a></h5>
-						</li>
+						<% end %>
 					</ul>
 
 

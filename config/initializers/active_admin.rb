@@ -1,6 +1,8 @@
 ActiveAdmin.setup do |config|
 
-  config.site_title = "Techie History Alltime Apple products"
+  config.site_title = "Techie History Alltime Apple Products"
+
+  config.site_title_image = 'logo-apple.png'
 
   config.namespace :admin do |admin|
     admin.build_menu :utility_navigation do |menu|
@@ -9,11 +11,9 @@ ActiveAdmin.setup do |config|
       admin.add_logout_button_to_menu menu
     end
     admin.site_title = "Admin SiteArea"
+    admin.site_title_image = 'logo-apple.png'
   end
 
-  config.namespace :super_admin do |super_admin|
-    super_admin.site_title = "Super Admin SiteArea"
-  end
 
   config.authentication_method = :authenticate_admin_user!
 

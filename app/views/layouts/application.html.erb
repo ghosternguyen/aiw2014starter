@@ -84,8 +84,8 @@
 						</li><!-- /.dropdown -->
 						<li class="dropdown"><a href="#">Category <i class="fa fa-caret-down"></i></a>
 							<ul class="sub-menu">
-								<% @categories.each do |category| %>
-								  	<li><%= link_to category.name, blog_category_path %></li>
+								<% @men_cat.each do |category| %>
+								  	<li><%= link_to category.name, blog_category_path(:category_id => category.id) %></li>
 								<% end %>
 							</ul><!-- /.sub-menu -->
 						</li><!--  /.dropdown -->
@@ -115,8 +115,8 @@
 
 				<div class="collapse navbar-collapse ccr-nav-below-main">
 					<ul class="nav navbar-nav">
-						<% @categories.each do |category| %>
-						  	<li><%= link_to category.name %></li>
+						<% @bar_cat.each do |category| %>
+						  	<li><%= link_to category.name, blog_category_path(:category_id => category.id) %></li>
 						<% end %>
 					</ul> <!-- /.nav /.navbar-nav -->
 				</div>

@@ -3,7 +3,8 @@ class BlogController < ApplicationController
   end
 
   def post
-    @categories = Category.all
+    @men_cat = Category.all
+    @bar_cat = @men_cat.limit(5)
     @posts = Post.all
     @posts = Post.includes(:category)
     @popularposts = Post.all.order('created_at DESC').limit(3)
@@ -11,7 +12,8 @@ class BlogController < ApplicationController
   end
 
   def post_detail
-    @categories = Category.all
+    @men_cat = Category.all
+    @bar_cat = @men_cat.limit(5)
     @post_detail = Post.find(params[:id])
     @posts = Post.includes(:category)
     @popularposts = Post.all.order('created_at DESC').limit(3)
@@ -19,8 +21,14 @@ class BlogController < ApplicationController
   end
 
   def category
-    @categories = Category.all
+    @men_cat = Category.all
+    @bar_cat = Category.all.limit(5)
+    @category = Category.find(params[:category_id])
+    @posts = @category.post.limit(5)
+    @firstpost = @category.post.limit(1)
+    @under1stpost = @posts.offset(1)
     @popularposts = Post.all.order('created_at DESC').limit(3)
     @recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
   end
+
 end

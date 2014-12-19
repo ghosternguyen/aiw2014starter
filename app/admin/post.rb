@@ -3,32 +3,41 @@ ActiveAdmin.register Post do
 
   permit_params :category_id, :title, :body, :description, :image
 
-    show do |ad|
-      attributes_table do
-        row :id
-        row :category_id
-        row :title
-        row :body
-        row :description
-        row :image do
-          image_tag post.image_url(:thumb)
-        end
-        row :created_at
-        row :updated_at
-      end
-      active_admin_comments
+  index do
+    selectable_column
+    column :title, :sortable => :title do |post|
+      link_to post.title, [ :admin, post]
     end
-
-
-
-    form :html => {:multipart => true} do |f|
-      f.inputs "Create Post..." do
-        f.input :category_id, :as => :select, :collection => Category.all, :label => "Category"
-        f.input :title, required: true
-        f.input :body, required: true
-        f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
-        f.input :description, as: :wysihtml5
-      end
-      f.actions
+    column :category_id do |post|
+      link_to post.category_id, [ :admin, post ]
     end
+    column :created_at
+    column :updated_at 
+    actions
+  end 
+
+  show do
+    attributes_table do
+      row :title
+      row :body
+      row :image
+      row :category_id
+    end
+  end 
+
+
+
+  form :html => {:multipart => true} do |f|
+    f.inputs "Add/Edit Post" do
+      f.input :category_id, :as => :select, :collection => Category.all, :label => "Category"
+      f.input :title, required: true
+      f.input :body, required: true, as: :wysihtml5
+      f.input :image, :as => :file, :hint => f.object.image.present? \
+        ? f.template.image_tag(f.object.image.url(:thumb))
+        : f.template.content_tag(:span, "No image yet")
+      f.input :image_cache, :as => :hidden
+      f.input :description, as: :wysihtml5
+    end
+    f.actions
+  end
 end
