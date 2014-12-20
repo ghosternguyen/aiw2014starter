@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  get 'contacts/new'
-
-  root 'home#index'
+ root 'home#index'
 
   get 'home/index'
   get 'home/news'
   get 'home/news_detail'
+  get 'home/search'
 
   
 

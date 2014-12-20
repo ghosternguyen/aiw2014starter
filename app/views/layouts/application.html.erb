@@ -23,10 +23,11 @@
 							<li><%= link_to "Login", new_admin_user_session_path %></li>
 							<li><%= link_to "Register", new_admin_user_session_path %></li>
 							<li>
-								<form class="form-inline" role="form" action="#">
-									<input type="search" placeholder="Search here..." required>
-									<button type="submit"><i class="fa fa-search"></i></button>
-								</form>
+								<%= form_tag(home_search_path, :method => "get", id: "search-form") do %>
+									<%= text_field_tag :search, params[:search], placeholder: "Search For Somethin?" %>
+									<%= submit_tag "Submit", :name => nil %>
+								<% end %>
+								
 							</li>
 						</ul> <!--  /.right-top-menu -->
 					</nav> <!-- /.top-menu -->

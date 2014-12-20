@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 	def index
 		@men_cat = Category.all
 		@bar_cat = @men_cat.limit(5)
-		@posts = Post.all
+		@posts = Post.all.order("created_at DESC")
 		@popularposts = Post.all.order('created_at DESC').limit(3)
 		@recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
 		@news = News.all
@@ -12,14 +12,7 @@ class HomeController < ApplicationController
 		@slide = Slide.all
 		@firstslide = @slide.order("created_at desc").limit(1)
 		@under1stslide = @slide.order("created_at desc").offset(1)
-
-		if params[:search]
-			@posts = Post.search(params[:search]).order("post DESC")
-			@other = Post.search_all(params[:search]).order("post DESC")
-		else
-			@brand = Post.all.order('post DESC')
-
-		end
+		
 	end
 
 	def post_detail
@@ -45,6 +38,16 @@ class HomeController < ApplicationController
 	end
 
 	def search
+		@men_cat = Category.all
+		@bar_cat = @men_cat.limit(5)
+		@popularposts = Post.all.order('created_at DESC').limit(3)
+		@recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
+		if params[:search]
+			@posts = Post.search(params[:search])
+		else
+			@posts = Post.all.order("created_at DESC")
+
+		end
 	end
 
 	def sample
