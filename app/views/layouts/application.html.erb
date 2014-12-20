@@ -23,9 +23,11 @@
 							<li><%= link_to "Login", new_admin_user_session_path %></li>
 							<li><%= link_to "Register", new_admin_user_session_path %></li>
 							<li>
-								<%= form_tag(home_search_path, :method => "get", id: "search-form") do %>
+								<%= form_tag(home_search_path, :method => "get", :class => 'form-inline') do %>
 									<%= text_field_tag :search, params[:search], placeholder: "Search For Somethin?" %>
-									<%= submit_tag "Submit", :name => nil %>
+									<%= button_tag "", :name => nil  do %>
+										<i class="fa fa-search"></i>
+										<% end %>
 								<% end %>
 								
 							</li>
@@ -148,7 +150,7 @@
 		<div class="container">
 			<ul>
 				<li class="col-md-3">
-					<h5>About Us</h5>
+					<h5>About Us Group 15 - 6C11</h5>
 					<div class="about-us">
 						<p>Nguyễn Bá Thanh</p>
 						<p>Nguyễn Ngọc Tuyền</p>
@@ -156,10 +158,7 @@
 						<p>Lưu Tiến Đạt</p>
 						<p>Lê Thị Thủy</p>
 						<p>Bùi Chí Thức</p>
-					</div>
-					<div class="site-logo">
-						<a href="index.html"><img src="<%= image_path("logo-apple.png") %>" alt="Side Logo" /><h1>Techie<span> History</span></h1></a>
-					</div> <!-- / .navbar-header -->
+					</div><!-- / .navbar-header -->
 					
 				</li>
 				<li class="col-md-3">

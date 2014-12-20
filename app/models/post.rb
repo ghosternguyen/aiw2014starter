@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-	belongs_to :category, foreign_key: :id
+	belongs_to :category
 	mount_uploader :image, AttachmentUploader
 
 	def self.search(query)

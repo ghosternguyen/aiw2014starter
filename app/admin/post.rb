@@ -16,12 +16,16 @@ ActiveAdmin.register Post do
     actions
   end 
 
-  show do
+  show do |post|
     attributes_table do
       row :title
-      row :body
-      row :image
       row :category_id
+      row :body do
+        raw post.body
+      end
+      row :image do
+        image_tag(post.image.url(:thumb))
+      end
     end
   end 
 
@@ -31,12 +35,15 @@ ActiveAdmin.register Post do
     f.inputs "Add/Edit Post" do
       f.input :category_id, :as => :select, :collection => Category.all, :label => "Category"
       f.input :title, required: true
-      f.input :body, required: true, as: :wysihtml5
+      f.input :body, required: true, :as => :ckeditor
       f.input :image, :as => :file, :hint => f.object.image.present? \
-        ? f.template.image_tag(f.object.image.url(:thumb))
-        : f.template.content_tag(:span, "No image yet")
+      ? f.template.image_tag(f.object.image.url(:thumb))
+      : f.template.content_tag(:span, "No Image yet")
+      if f.object.image?
+        f.input :remove_image, :as => :boolean
+      end
       f.input :image_cache, :as => :hidden
-      f.input :description, as: :wysihtml5
+      f.input :description
     end
     f.actions
   end

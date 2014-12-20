@@ -7,7 +7,7 @@
 			</div> <!-- / .current-page -->
 
 			<article id="ccr-article">
-				<h1><%= @post_detail.title %></h1>
+				<h1><%=raw @post_detail.title %></h1>
 
 				<div class="article-like-comment-date">	
 					Posted by on <%= @post_detail.created_at %> in <%=link_to @post_detail.category.name %>
@@ -20,7 +20,7 @@
 				<%= image_tag @post_detail.image, {:alt => @post_detail.image} %>
 
 				<p>
-					<%= @post_detail.body %>
+					<%=raw @post_detail.body %>
 				</p>
 				
 				<div class="article-tags">
@@ -36,70 +36,16 @@
 					<p>Related Post</p>
 				</div> <!-- .ccr-gallery-ttile -->
 				<ul>
+					<% @relatedposts.each do |post| %>
 					<li>
 
 						<div class="ccr-thumbnail">
-							<img src="img/x_1.jpg" width="150" height="180">
-							<p><a href="#postlink">Read More</a></p>
+							<%= image_tag( post.image, size: "180x150", alt: post.image) %>
+							<p><%= link_to "Read More", {:action => 'post_detail', :id => post.id} %></p>
 						</div>
-						<h5><a href="#">Developers Start Designing Apps ...</a></h5>
+						<h5><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h5>
 					</li>
-					<li>
-
-						<div class="ccr-thumbnail">
-							<img src="img/x_2.jpg" width="150" height="180">
-							<p><a href="#postlink">Read More</a></p>
-						</div>
-						<h5><a href="#">Apple Adds UnionPay Payment ...</a></h5>
-					</li>
-					<li>
-
-						<div class="ccr-thumbnail">
-							<img src="img/x_3.jpg" width="150" height="180">
-							<p><a href="#postlink">Read More</a></p>
-						</div>
-						<h5><a href="#">FY 14 Fourth Quarter Results ...</a></h5>
-					</li>
-					<li>
-
-						<div class="ccr-thumbnail">
-							<img src="img/x_4.jpg" width="150" height="180">
-							<p><a href="#postlink">Read More</a></p>
-						</div>
-						<h5><a href="#">Apple Introduces iPad Air 2 ...</a></h5>
-					</li>
-					<li>
-
-						<div class="ccr-thumbnail">
-							<img src="img/anh3.jpg" width="150" height="180">
-							<p><a href="#postlink">Read More</a></p>
-						</div>
-						<h5><a href="#">Apple Introduces iPad mini 3...</a></h5>
-					</li>
-					<li>
-
-						<div class="ccr-thumbnail">
-							<img src="img/anh4.jpg" width="150" height="180">
-							<p><a href="#postlink">Read More</a></p>
-						</div>
-						<h5><a href="#">Apple Pay Set to Transform Mobile ...</a></h5>
-					</li>
-					<li>
-
-						<div class="ccr-thumbnail">
-							<img src="img/anh5.jpg" width="150" height="180">
-							<p><a href="#postlink">Read More</a></p>
-						</div>
-						<h5><a href="#">OS X Yosemite Now Available as ...</a></h5>
-					</li>
-					<li>
-
-						<div class="ccr-thumbnail">
-							<img src="img/anh6.jpg" width="150" height="180">
-							<p><a href="#postlink">Read More</a></p>
-						</div>
-						<h5><a href="#">Apple Introduces 27-inch iMac ...</a></h5>
-					</li>
+					<% end %>
 				</ul>
 
 

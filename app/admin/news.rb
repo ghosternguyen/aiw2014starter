@@ -24,7 +24,7 @@ ActiveAdmin.register News do
   form(:html => { :multipart => true }) do |f|
     f.inputs "Add/Edit News" do
       f.input :title
-      f.input :content, as: :wysihtml5
+      f.input :content, :as => :ckeditor
       f.input :credit
       f.input :image, :as => :file, :hint => f.object.image.present? \
         ? f.template.image_tag(f.object.image.url(:thumb))

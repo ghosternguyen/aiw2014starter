@@ -18,6 +18,8 @@ class BlogController < ApplicationController
     @posts = Post.includes(:category)
     @popularposts = Post.all.order('created_at DESC').limit(3)
     @recentposts = Post.all.order('created_at DESC').limit(3).offset(1)
+    @category = Category.find(@post_detail.category_id)
+    @relatedposts = @category.post.limit(5)
   end
 
   def category
