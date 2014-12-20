@@ -22,7 +22,7 @@ ActiveAdmin.register News do
   end 
 
   form(:html => { :multipart => true }) do |f|
-    f.inputs "Create News..." do
+    f.inputs "Add/Edit News" do
       f.input :title
       f.input :content, as: :wysihtml5
       f.input :credit

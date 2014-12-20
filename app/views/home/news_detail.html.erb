@@ -225,3 +225,117 @@
 
 
 		</section><!-- /.col-md-8 / #ccr-left-section -->
+
+		</section><!-- /.col-md-8 / #ccr-left-section -->
+
+			<aside id="ccr-right-section" class="col-md-4 ccr-home">
+
+
+
+
+				<section id="sidebar-older-post">
+					<div class="ccr-gallery-ttile">
+						<span></span> 
+						<p><strong>Older Post</strong></p>
+					</div> <!-- .ccr-gallery-ttile -->
+					<ul>
+						<li>
+							<img src="<%= image_path("x_1.jpg") %>" alt="Avatar">
+							<a href="#">Developers Start Designing Apps for Apple Watch</a>
+							<div class="date-like-comment">
+								<span class="date"><time datetime="2014-02-17">11/18/2014</time></span>
+								<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+								<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+							</div>
+						</li>
+					</ul>
+
+				</section> <!-- /#sidebar-older-post -->
+
+				<section id="sidebar-video-post">
+					<div class="ccr-gallery-ttile">
+						<span></span> 
+						<p><strong>Video Post</strong></p>
+					</div> <!-- .ccr-gallery-ttile -->
+
+					<div class="sidebar-video">
+						<iframe width="340" height="195" src="//www.youtube.com/embed/zhZDGoQPNJM" frameborder="0" allowfullscreen></iframe>
+						iPhone 6 Clone Unboxing!
+					</div>
+				</section>  <!-- /#sidebar-video-post -->
+
+
+				<section id="ccr-sidebar-add-place">
+					<div class="sidebar-add-place">
+
+						<img src="<%= image_path("slide_x1.jpg") %>" width="370" height="250">
+						
+					</div> 
+				</section> <!-- /#ccr-sidebar-add-place -->
+
+
+
+			</aside><!-- / .col-md-4  / #ccr-right-section -->
+
+
+	<aside id="ccr-footer-sidebar">
+		<div class="container">
+			<ul>
+				<li class="col-md-3">
+					<h5>About Us</h5>
+					<div class="about-us">
+						<p>Nguyễn Bá Thanh</p>
+						<p>Nguyễn Ngọc Tuyền</p>
+						<p>Đào Quang Hoan</p>
+						<p>Lưu Tiến Đạt</p>
+						<p>Lê Thị Thủy</p>
+						<p>Bùi Chí Thức</p>
+					</div>
+					<div class="site-logo">
+						<a href="index.html"><img src="<%= image_path("logo-apple.png") %>" alt="Side Logo" /><h1>Techie<span> History</span></h1></a>
+					</div> <!-- / .navbar-header -->
+					
+				</li>
+				<li class="col-md-3">
+					<h5>Popular Post</h5>
+					<ul>
+						<% @popularposts.each do |post| %>
+						<li>
+							<%= image_tag post.image, :alt => post.image %>
+							<%= link_to post.title, blog_post_path(:id => post.id) %>
+						</li>
+						<% end %>
+					</ul>
+					
+				</li>
+				<li class="col-md-3">
+					<h5>Recent Post</h5>
+					<ul>
+						<% @recentposts.each do |post| %>
+						<li>
+							<%= image_tag post.image, :alt => post.image %>
+							<%= link_to post.title, blog_post_path(:id => post.id) %>
+						</li>
+						<% end %>
+					</ul>
+					
+				</li>
+				<li class="col-md-3">
+					<h5>Tags</h5>
+					<div class="tagcloud">
+						<a href="#">Apple</a>
+						<a href="#">Ipad</a>
+						<a href="#">Iphone</a>
+						<a href="#">IMac</a>
+						<a href="#">Macbook</a>
+						<a href="#">Ipod</a>
+						<a href="#">Power Mac</a>
+						<a href="#">Apple Watch</a>
+						<a href="#">Technology</a>
+					</div>
+					
+				</li>
+			</ul>
+		</div>
+		
+	</aside> <!-- /#ccr-footer-sidebar -->

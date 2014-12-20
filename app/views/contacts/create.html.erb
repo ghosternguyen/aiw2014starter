@@ -1,0 +1,43 @@
+
+<section id="ccr-left-section" class="col-md-8">
+
+	<div class="current-page">
+		<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i>  Contact
+
+		
+	</div> <!-- / .current-page -->
+
+	<section id="ccr-blog">
+		<article>
+			<% flash.each do |key, value| %>
+			<a href="#" data-dismiss="alert">×</a>
+			<%= value %>
+			<% end %>
+		</article>
+		
+	</section> <!-- /#ccr-blog -->
+	
+</section><!-- /.col-md-8 / #ccr-left-section -->
+
+<section  id="ccr-right-section" class="col-md-4">
+	<section id="ccr-contact-sidebar">
+		<p>
+			<span>Our Team</span>
+		</p>
+		<address>
+			<p>
+				Address: Km 9, Nguyen Trai Street, Thanh Xuan District.
+			</p>
+			<p>
+				Ha Noi, Viet Nam
+			</p>
+			<p>
+				Phone:+084 - 973874452
+			</p>
+			<p>
+				Email: thinghost76@gmail.com
+			</p>
+		</address>
+
+	</section> <!-- /#ccr-contact-sidebar -->
+		</section><!-- / .col-md-4  / #ccr-right-section -->

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
+
   root 'home#index'
 
   get 'home/index'
   get 'home/news'
-  get 'home/contact'
   get 'home/news_detail'
 
   
@@ -12,12 +13,12 @@ Rails.application.routes.draw do
   get 'blog/post_detail'
   get 'blog/category'
 
-
   post 'blog', to: 'blog#create', as: "blog_create_path"
   post 'blog', to: 'blog#create', as: 'blog_create'
   delete 'blog/:id', to: 'blog#destroy', as: 'blog_destroy'
 
-
+  get 'contacts/new'
+  post 'contacts', to: 'contacts#create', as: 'contacts_create'
 
 
 

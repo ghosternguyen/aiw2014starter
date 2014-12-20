@@ -1,0 +1,71 @@
+
+<section id="ccr-left-section" class="col-md-8">
+
+	<div class="current-page">
+		<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i>  Contact
+
+		
+	</div> <!-- / .current-page -->
+
+	<section id="ccr-blog">
+		<article>
+			<p>Contact Us</p>
+			<%= simple_form_for @contact, :url => contacts_create_path, :html => { :class => 'form-horizontal' } do |f| %>
+			<%= f.input :name, :input_html => {:style => 'width: 350px'} %>
+			<%= f.input :email, :input_html => {:style => 'width: 350px'}  %>
+			<%= f.input :message,  :input_html => {:style => 'width: 350px'}  %>
+			<%= f.input :nickname, :hint => 'Leave this field blank!', input_wrapper_html: { class: "col-xs-2" } %>
+
+			<%= f.button :submit, 'Send message', :class => 'btn-primary' %>
+			<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+			home_index_path, :class => 'btn btn-default' %>
+			<% end %>
+			
+		</article>
+		
+	</section> <!-- /#ccr-blog -->
+	
+</section><!-- /.col-md-8 / #ccr-left-section -->
+<section  id="ccr-right-section" class="col-md-4">
+	<section id="ccr-contact-sidebar">
+		<p>
+			<span>Our Team</span>
+		</p>
+		<address>
+			<p>
+				Address: Km 9, Nguyen Trai Street, Thanh Xuan District.
+			</p>
+			<p>
+				Ha Noi, Viet Nam
+			</p>
+			<p>
+				Phone:+084 - 973874452
+			</p>
+			<p>
+				Email: thinghost76@gmail.com
+			</p>
+		</address>
+
+
+		<p>
+			<span>Social Updates</span>
+		</p>
+		<ul>
+			<li>
+				<a href="#"  class="google-plus"><i class="fa fa-google-plus"></i></a>
+			</li>
+			<li >
+				<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+			</li>
+			<li >
+				<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+			</li>
+			<li >
+				<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+			</li>
+		</ul>
+	</section> <!-- /#ccr-contact-sidebar -->
+</section><!-- / .col-md-4  / #ccr-right-section -->
+
+
+

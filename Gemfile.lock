@@ -126,6 +126,9 @@ GEM
       activesupport (>= 3.0.0)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mail_form (1.5.0)
+      actionmailer (>= 3.2, < 5)
+      activemodel (>= 3.2, < 5)
     mime-types (2.4.3)
     mini_magick (4.0.1)
     minitest (5.4.3)
@@ -174,6 +177,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_form (3.0.3)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -215,11 +221,13 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  mail_form (~> 1.5.0.rc)
   mini_magick
   mysql2 (~> 0.3.17)
   rails (= 4.1.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  simple_form (~> 3.0.0.rc)
   spring
   tinymce-rails
   turbolinks

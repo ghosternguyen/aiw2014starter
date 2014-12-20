@@ -1,346 +1,195 @@
-<section id="ccr-main-section">
-	<div class="container">
+
+<section id="ccr-left-section" class="col-md-8">
+
+	
+
+	<div class="ccr-last-update">
+		<div class="update-ribon">Last Update</div> <!-- /.update-ribon -->
+		<span class="update-ribon-right"></span> <!-- /.update-ribon-left -->
+		<div class="update-news-text" id="update-news-text">
+			<ul id="latestUpdate">  
+				<% @lastupdate.each do |news| %>
+				<li>
+					<%= link_to news.title, home_news_detail_path(:id => news.id) %>
+				</li>
+				<% end %>
+			</ul>
+		</div> <!-- /.update-text -->
+
+		<div class="update-right-border"></div> <!-- /.update-right-border -->
+	</div> <!-- / .ccr-last-update -->
 
 
-		<section id="ccr-left-section" class="col-md-8">
+	<section id="ccr-slide-main" class="carousel slide" data-ride="carousel">				
+
+		<!-- Carousel items -->
+		<div class="carousel-inner">
+			<% @firstslide.each do |slide| %>
+			<div class="active item">
+				<div class="container slide-element">
+					<%= image_tag slide.photo, size: "770x436", :alt => slide.photo %>
+					<p><a href="#"><%= slide.title %></a></p>
+				</div> <!-- /.slide-element -->
+			</div> <!--/.active /.item -->
+			<% end %>
 
 			
 
-			<div class="ccr-last-update">
-				<div class="update-ribon">Last Update</div> <!-- /.update-ribon -->
-				<span class="update-ribon-right"></span> <!-- /.update-ribon-left -->
-				<div class="update-news-text" id="update-news-text">
-						<ul id="latestUpdate">  
-						    <% @lastupdate.each do |news| %>
-							<li>
-								<%= link_to news.title, home_news_detail_path(:id => news.id) %>
-							</li>
-							<% end %>
-						</ul>
-				</div> <!-- /.update-text -->
 
-				<div class="update-right-border"></div> <!-- /.update-right-border -->
-			</div> <!-- / .ccr-last-update -->
+		</div> <!-- /.carousel-inner -->
+
+		<!-- slider nav -->
+		<a class="carousel-control left" href="#ccr-slide-main" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
+		<a class="carousel-control right" href="#ccr-slide-main" data-slide="next"><i class="fa fa-arrow-right"></i></a>
+
+		<ol class="carousel-indicators">
+			<li data-target="#ccr-slide-main" data-slide-to="0" class="active"></li>
+			<li data-target="#ccr-slide-main" data-slide-to="1"></li>
+			<li data-target="#ccr-slide-main" data-slide-to="2"></li>
+			<li data-target="#ccr-slide-main" data-slide-to="3"></li>
+		</ol> <!-- /.carousel-indicators -->
 
 
-			<section id="ccr-slide-main" class="carousel slide" data-ride="carousel">				
-					
-					<!-- Carousel items -->
-					<div class="carousel-inner">
-						<div class="active item">
-							<div class="container slide-element">
-								<img src="<%= image_path("slide/main-slide-1.jpg") %>" alt="Main Slide Image 1">
-								<p><a href="#">The iPad 2 is the second generation iPad.</a></p>
-							</div> <!-- /.slide-element -->
-						</div> <!--/.active /.item -->
-
-						<div class="item">
-							<div class="container slide-element">
-								<img src="<%= image_path("slide/main-slide-2.jpg") %>" alt="Main Slide Image 2">
-								<p><a href="#">The iPhone 4S</a></p>
-							</div> <!-- /.slide-element -->
-						</div> <!--  /.item -->
-
-						<div class="item">
-							<div class="container slide-element">
-								<img src="<%= image_path("slide/main-slide-3.jpg") %>" alt="Main Slide Image 3">
-								<p><a href="#">The third generation iPad originally marketed as The new iPad.</a></p>
-							</div> <!-- /.slide-element -->
-						</div> <!-- .item -->
-
-						<div class="item">
-							<div class="container slide-element">
-								<img src="<%= image_path("slide/main-slide-4.jpg") %>" alt="Main Slide Image 4">
-								<p><a href="#">MacBook Air is a line of Macintosh ultraportable notebook.</a></p>
-							</div> <!-- /.slide-element -->
-						</div> <!-- /.item -->
-
-						
-					</div> <!-- /.carousel-inner -->
-					
-					<!-- slider nav -->
-					<a class="carousel-control left" href="#ccr-slide-main" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
-					<a class="carousel-control right" href="#ccr-slide-main" data-slide="next"><i class="fa fa-arrow-right"></i></a>
-
-					<ol class="carousel-indicators">
-						<li data-target="#ccr-slide-main" data-slide-to="0" class="active"></li>
-						<li data-target="#ccr-slide-main" data-slide-to="1"></li>
-						<li data-target="#ccr-slide-main" data-slide-to="2"></li>
-						<li data-target="#ccr-slide-main" data-slide-to="3"></li>
-					</ol> <!-- /.carousel-indicators -->
-
-							
-			</section><!-- /#ccr-slide-main -->
+	</section><!-- /#ccr-slide-main -->
 
 
 
 
-			<section id="ccr-latest-post-gallery">
-					<div class="ccr-gallery-ttile">
-						<span></span> 
-						<p>Others Latest Post Gallery</p>
-					</div><!-- .ccr-gallery-ttile -->
+	<section id="ccr-latest-post-gallery">
+		<div class="ccr-gallery-ttile">
+			<span></span> 
+			<p>Others Latest Post Gallery</p>
+		</div><!-- .ccr-gallery-ttile -->
 
-					
-						<ul class="ccr-latest-post">
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail1.jpg") %>" alt="Thumbnail 1">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Apple I</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail2.jpg") %>" alt="Thumbnail 2">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Apple III</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail3.jpg") %>" alt="Thumbnail 3">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Xerox PARC and the Lisa</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail4.jpg") %>" alt="Thumbnail 4">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Macintosh SE</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail5.jpg") %>" alt="Thumbnail 5">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">iMac, iBook, and Power Mac G4</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail6.jpg") %>" alt="Thumbnail 6">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">iPod and iTunes store</a></h4>
-							</li>
-						</ul> <!-- /.ccr-latest-post -->
-					
-				</section> <!--  /#ccr-latest-post-gallery  -->
+
+		<ul class="ccr-latest-post">
+			<% @posts.each do |post| %>
+			<li>
+				<div class="ccr-thumbnail">
+					<%= image_tag post.image, :alt => post.image %>
+					<p><%= link_to 'Read More', {:controller => "blog", :action => "post_detail", :id => post.id} %></p>
+				</div>
+				<h4>
+					<%= link_to post.title, {:controller => "blog", :action => "post_detail", :id => post.id} %></h4>
+				</li>
+				<% end %>
+			</ul> <!-- /.ccr-latest-post -->
+
+		</section> <!--  /#ccr-latest-post-gallery  -->
+
+		<section class="bottom-border">
+		</section> <!-- /#bottom-border -->
+
+
+
+
+		<section id="ccr-world-news">
+			<div class="ccr-gallery-ttile">
+				<span></span> 
+				<p>Apple News</p>
+			</div> <!-- .ccr-gallery-ttile -->
+
+			<section class="featured-world-news">
+				<% @firstnews.each do |news| %>
+				<div class="featured-world-news-img"><%= image_tag news.image, :alt => news.image %></div>
+				<div class="featured-world-news-post">
+					<h5><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></h5>
+					<%= truncate(news.content, length: 300, separator: ' ' ) %>
+					<div class="like-comment-readmore">
+						<%= link_to "Read More", {:action => 'news_detail', :id => news.id}, :class => "read-more" %>
+					</div> <!-- /.like-comment-readmore -->
+				</div>
+				<% end %>
+			</section> <!-- /#featured-world-news -->
+
+
+			<ul>
+				<% @under1stnews.each do |news| %>
+				<li>
+					<div class="ccr-thumbnail">
+						<%= image_tag news.image, :alt => news.image %>
+						<p><%= link_to "Read More", {:action => 'news_detail', :id => news.id} %></p>
+					</div>
+					<h5><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></h5>
+				</li>
+				<% end %>
+			</ul>
+
+		</section> <!-- / #ccr-world-news -->
+
+
+
+
+
+
+
+
+
+
+
+	</section><!-- /.col-md-8 / #ccr-left-section -->
+
+	<aside id="ccr-right-section" class="col-md-4 ccr-home">
+
+		<section id="sidebar-older-post">
+			<div class="ccr-gallery-ttile">
+				<span></span> 
+				<p><strong>Older Post</strong></p>
+			</div> <!-- .ccr-gallery-ttile -->
+			<ul>
+				<% @recentposts.each do |post| %>
+				<li>
+					<%= image_tag post.image, :alt => post.image %>
+					<%= link_to post.title, blog_post_path(:id => post.id) %>
+					<div class="date-like-comment">
+						<span class="date"><%= post.created_at %></span>
+					</div>
+				</li>
+				<% end %>
+			</ul>
+
+		</section> <!-- /#sidebar-older-post -->
+		</br>
+		<section id="sidebar-video-post">
+			<div class="ccr-gallery-ttile">
+				<p><strong>Watch news our videos</strong></p>
+			</div> <!-- .ccr-gallery-ttile -->
+
+			<div class="sidebar-video">
+				<iframe width="340" height="195" src="//www.youtube.com/embed/zhZDGoQPNJM" frameborder="0" allowfullscreen></iframe>
+				iPhone 6 Clone Unboxing!
+			</div>
+		</section>  <!-- /#sidebar-video-post -->
+
+
+		<section id="ccr-sidebar-add-place">
+			<div class="sidebar-add-place">
+
+				<img src="<%= image_path("slide_x1.jpg") %>" width="370" height="250">
 				
-				<section class="bottom-border">
-				</section> <!-- /#bottom-border -->
+			</div> 
+		</section> <!-- /#ccr-sidebar-add-place -->
+		</br>
+		<section id="ccr-contact-sidebar">
+			<p>
+				<span>Our Team</span>
+			</p>
+			<address>
+				<p>
+					Address: Km 9, Nguyen Trai Street, Thanh Xuan District.
+				</p>
+				<p>
+					Ha Noi, Viet Nam
+				</p>
+				<p>
+					Phone:+084 - 973874452
+				</p>
+				<p>
+					Email: thinghost76@gmail.com
+				</p>
+			</address>
+
+		</section> <!-- /#ccr-contact-sidebar -->
 
 
-
-
-				<section id="ccr-world-news">
-					<div class="ccr-gallery-ttile">
-							<span></span> 
-							<p>Apple News</p>
-					</div> <!-- .ccr-gallery-ttile -->
-					
-					<section class="featured-world-news">
-						<div class="featured-world-news-img"><img src="<%= image_path("thumbnail-big1.jpg") %>" alt="Thumb"></div>
-						<div class="featured-world-news-post">
-						<h5>Introduction to Ipad</h5>
-						The Apple iPad is a 10-inch tablet computer that runs iOS, the same operating system that iPhone runs on. So, in one sense of the word, the iPad *is* a big iPhone. However, this is not necessarily a pejorative. The iPhone is one of the most popular smartphones available, and its user interface has been widely praised...
-							<div class="like-comment-readmore">
-								<i class="fa fa-thumbs-o-up"> 08</i>
-								<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>
-								<a class="read-more" href="#">Read More</a>
-							</div> <!-- /.like-comment-readmore -->
-						</div>
-					</section> <!-- /#featured-world-news -->
-
-
-					<ul>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail-small-1.jpg") %>" alt="thumbnail-small-1.jpg" />
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Apple in your office</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail-small-2.jpg") %>" alt="thumbnail-small-2.jpg" />
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">A Week With the Retina iMac</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail-small-3.jpg") %>" alt="thumbnail-small-3.jpg" />
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">MacBook Air: Everything We Know</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail-small-4.jpg") %>" alt="thumbnail-small-4.jpg" />
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">IPad 2 review</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail-small-5.jpg") %>" alt="thumbnail-small-5.jpg" />
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">iPad 2 design</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail-small-6.jpg") %>" alt="thumbnail-small-6.jpg" />
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Different between Ipad 1 vs 2</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail-small-7.jpg") %>" alt="thumbnail-small-7.jpg" />
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Introduction to MacBook Pro 2014</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="<%= image_path("thumbnail-small-8.jpg") %>" alt="thumbnail-small-8.jpg" />
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Evaluating the 13-inch MacBook Pro ...</a></h5>
-						</li>
-					</ul>
-
-				</section> <!-- / #ccr-world-news -->
-
-
-
-
-				<section class="bottom-border"></section>
-
-				<section id="ccr-sports-gallery">
-					<div class="ccr-gallery-ttile">
-							<span></span> 
-							<p>Apple Events</p>
-					</div> <!-- .ccr-gallery-ttile -->
-
-					<section class="featured-sports-news">
-						<div class="featured-sports-newss-img"><img src="<%= image_path("ev_1.jpg") %>" alt="Thumb"></div>
-						<div class="featured-sports-news-post">
-						<h5>Apple Special Event October 16, 2014</h5>
-						Get a first look at iMac with Retina 5K display and iPad Air 2. Learn about the release of OS X Yosemite. And follow every moment of the special event at Town Hall on the Apple campus....
-							<div class="like-comment-readmore">
-								<i class="fa fa-thumbs-o-up"> 08</i>
-								<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>
-								<a class="read-more" href="#">Read More</a>
-							</div> <!-- /.like-comment-readmore -->
-						</div>
-					</section> <!-- /#featured-sports-news -->
-
-					<ul>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_2.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple Special Event September 2014</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_3.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple Special Event. June 2, 2014.</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_4.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple Special Event October 2013</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_5.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple Special Event September 2013</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_6.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple WWDC Keynote Address June 2013</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_7.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple Special Event May 2013</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_8.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple Special Event January 2013</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_9.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple Special Event October 2012</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_10.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple Special Event September 2012</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<div class="featured-sports-newss-img"><img src="<%= image_path("ev_11.jpg") %>" alt="Thumb"></div>
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Apple WWDC Keynote Address June 2012</a></h5>
-						</li>
-					</ul>					
-				
-				</section> <!-- /#ccr-sports-gallery -->
-
-				<section class="bottom-border"></section>
-
-
-
-
-
-
-
-
-		</section><!-- /.col-md-8 / #ccr-left-section -->
-
+	</aside><!-- / .col-md-4  / #ccr-right-section -->

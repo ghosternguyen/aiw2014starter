@@ -1,50 +1,116 @@
-<section id="ccr-main-section">
-	<div class="container">
+	<section id="ccr-left-section" class="col-md-8">
 
+		<div class="current-page">
+			<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i>  Products
 
-		<section id="ccr-left-section" class="col-md-8">
-
-			<div class="current-page">
-				<%= link_to "Home", home_index_path %> <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i>  Products
-
-				
-			</div> <!-- / .current-page -->
-
-			<section id="ccr-blog">
-			<% @posts.each do |post| %>
-				<article>
-					<figure class="blog-thumbnails">
-					<%= image_tag post.image, :alt => post.image %>
-					</figure> <!-- /.blog-thumbnails -->
-					<div class="blog-text">
-						<h1><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h1>
-						<p>
-							<%= truncate(post.body, length: 300, separator: ' ' ) %>
-						</p>
-
-						<div class="meta-data">					
-							<span class="read-more"><%= link_to "Read More", {:action => 'post_detail', :id => post.id}, :class => "read-more" %></span>
-						</div>
-					</div> <!-- /.blog-text -->
-					
-				</article>
-				<% end %>
-				
-				<div class="clearfix"></div>
-				<nav class="nav-paging">
-					<ul>
-						<li><a href="#pre"><i class="fa fa-chevron-left"></i></a></li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><span class="current">3</span></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#next"><i class="fa fa-chevron-right"></i></a></li>
-					</ul>
-				</nav>
-
-
-
-			</section> <!-- /#ccr-blog -->
 			
-		</section><!-- /.col-md-8 / #ccr-left-section -->
+		</div> <!-- / .current-page -->
+
+		<section id="ccr-blog">
+			<% @posts.each do |post| %>
+			<article>
+				<figure class="blog-thumbnails">
+					<%= image_tag post.image, :alt => post.image %>
+				</figure> <!-- /.blog-thumbnails -->
+				<div class="blog-text">
+					<h1><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h1>
+					<p>
+						<%= truncate(post.body, length: 300, separator: ' ' ) %>
+					</p>
+
+					<div class="meta-data">					
+						<span class="read-more"><%= link_to "Read More", {:action => 'post_detail', :id => post.id}, :class => "read-more" %></span>
+					</div>
+				</div> <!-- /.blog-text -->
+				
+			</article>
+			<% end %>
+			
+			<div class="clearfix"></div>
+			<nav class="nav-paging">
+				<ul>
+					<li><a href="#pre"><i class="fa fa-chevron-left"></i></a></li>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><span class="current">3</span></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#next"><i class="fa fa-chevron-right"></i></a></li>
+				</ul>
+			</nav>
+
+
+
+		</section> <!-- /#ccr-blog -->
+		
+	</section><!-- /.col-md-8 / #ccr-left-section -->
+
+	<aside id="ccr-right-section" class="col-md-4 ccr-home">
+
+
+
+
+		<section id="sidebar-older-post">
+			<div class="ccr-gallery-ttile">
+				<span></span> 
+				<p><strong>Older Post</strong></p>
+			</div> <!-- .ccr-gallery-ttile -->
+			<ul>
+				<li>
+					<img src="<%= image_path("x_1.jpg") %>" alt="Avatar">
+					<a href="#">Developers Start Designing Apps for Apple Watch</a>
+					<div class="date-like-comment">
+						<span class="date"><time datetime="2014-02-17">11/18/2014</time></span>
+						<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
+						<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+					</div>
+				</li>
+			</ul>
+
+		</section> <!-- /#sidebar-older-post -->
+
+		</br>
+		<section id="sidebar-video-post">
+			<div class="ccr-gallery-ttile">
+				<p><strong>Watch news our videos</strong></p>
+			</div> <!-- .ccr-gallery-ttile -->
+
+			<div class="sidebar-video">
+				<iframe width="340" height="195" src="//www.youtube.com/embed/zhZDGoQPNJM" frameborder="0" allowfullscreen></iframe>
+				iPhone 6 Clone Unboxing!
+			</div>
+		</section>  <!-- /#sidebar-video-post -->
+
+
+		<section id="ccr-sidebar-add-place">
+			<div class="sidebar-add-place">
+
+				<img src="<%= image_path("slide_x1.jpg") %>" width="370" height="250">
+				
+			</div> 
+		</section> <!-- /#ccr-sidebar-add-place -->
+		</br>
+		<section id="ccr-contact-sidebar">
+			<p>
+				<span>Our Team</span>
+			</p>
+			<address>
+				<p>
+					Address: Km 9, Nguyen Trai Street, Thanh Xuan District.
+				</p>
+				<p>
+					Ha Noi, Viet Nam
+				</p>
+				<p>
+					Phone:+084 - 973874452
+				</p>
+				<p>
+					Email: thinghost76@gmail.com
+				</p>
+			</address>
+
+		</section> <!-- /#ccr-contact-sidebar -->
+
+
+
+	</aside><!-- / .col-md-4  / #ccr-right-section -->
