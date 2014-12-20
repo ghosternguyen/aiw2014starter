@@ -56,15 +56,15 @@
 				<p><strong>Older Post</strong></p>
 			</div> <!-- .ccr-gallery-ttile -->
 			<ul>
+				<% @recentposts.each do |post| %>
 				<li>
-					<img src="<%= image_path("x_1.jpg") %>" alt="Avatar">
-					<a href="#">Developers Start Designing Apps for Apple Watch</a>
+					<%= image_tag post.image, :alt => post.image %>
+					<%= link_to post.title, blog_post_path(:id => post.id) %>
 					<div class="date-like-comment">
-						<span class="date"><time datetime="2014-02-17">11/18/2014</time></span>
-						<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-						<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+						<span class="date"><%= post.created_at %></span>
 					</div>
 				</li>
+				<% end %>
 			</ul>
 
 		</section> <!-- /#sidebar-older-post -->
