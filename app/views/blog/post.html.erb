@@ -10,12 +10,12 @@
 			<% @posts.each do |post| %>
 			<article>
 				<figure class="blog-thumbnails">
-					<%= image_tag post.image, :alt => post.image %>
+					<%= image_tag post.image.url(:thumb), :alt => post.image %>
 				</figure> <!-- /.blog-thumbnails -->
 				<div class="blog-text">
 					<h1><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h1>
 					<p>
-						<%= truncate(post.body, length: 300, separator: ' ' ) %>
+						<%= truncate (sanitize body.post, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", ""), length: 300, separator: ' ', omission: '... (continued)' %>
 					</p>
 
 					<div class="meta-data">					

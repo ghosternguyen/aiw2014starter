@@ -9,7 +9,7 @@ ActiveAdmin.register Post do
       link_to post.title, [ :admin, post]
     end
     column :category_id do |post|
-      link_to post.category.name, [ :admin, post ]
+      link_to post.category.name, [ :admin, post]
     end
     column :created_at
     column :updated_at 

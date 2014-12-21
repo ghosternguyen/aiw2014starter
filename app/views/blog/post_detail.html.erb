@@ -10,10 +10,7 @@
 				<h1><%=raw @post_detail.title %></h1>
 
 				<div class="article-like-comment-date">	
-					Posted by on <%= @post_detail.created_at %> in <%=link_to @post_detail.category.name %>
-
-					<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-					<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
+					Posted by on <%= @post_detail.created_at %> in <%= @post_detail.category.name %>.
 
 				</div> <!-- /.article-like-comment-date -->
 

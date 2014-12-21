@@ -27,14 +27,20 @@
 			<% @firstslide.each do |slide| %>
 			<div class="active item">
 				<div class="container slide-element">
-					<%= image_tag slide.photo, size: "770x436", :alt => slide.photo %>
+					<%= image_tag slide.photo, :alt => slide.photo %>
 					<p><a href="#"><%= slide.title %></a></p>
 				</div> <!-- /.slide-element -->
 			</div> <!--/.active /.item -->
 			<% end %>
 
-			
-
+			<% @under1stslide.each do |slide| %>
+			<div class="item">
+				<div class="container slide-element">
+					<%= image_tag slide.photo, :alt => slide.photo %>
+					<p><a href="#"><%= slide.title %></a></p>
+				</div> <!-- /.slide-element -->
+			</div> <!--/.active /.item -->
+			<% end %>
 
 		</div> <!-- /.carousel-inner -->
 
@@ -94,7 +100,7 @@
 				<div class="featured-world-news-img"><%= image_tag news.image, :alt => news.image %></div>
 				<div class="featured-world-news-post">
 					<h5><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></h5>
-					<%= truncate(news.content, length: 300, separator: ' ' ) %>
+					<%= truncate (sanitize news.content, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", ""), length: 300, separator: ' ', omission: '... (continued)' %>
 					<div class="like-comment-readmore">
 						<%= link_to "Read More", {:action => 'news_detail', :id => news.id}, :class => "read-more" %>
 					</div> <!-- /.like-comment-readmore -->
@@ -107,10 +113,10 @@
 				<% @under1stnews.each do |news| %>
 				<li>
 					<div class="ccr-thumbnail">
-						<%= image_tag news.image, :alt => news.image %>
+						<%= image_tag news.image.url(:thumb), :alt => news.image %>
 						<p><%= link_to "Read More", {:action => 'news_detail', :id => news.id} %></p>
 					</div>
-					<h5><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></h5>
+					<h6><%= link_to truncate(news.title, :length => 30, separator: ' '), {:action => 'news_detail', :id => news.id} %></h6>
 				</li>
 				<% end %>
 			</ul>

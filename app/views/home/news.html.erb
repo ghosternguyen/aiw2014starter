@@ -9,12 +9,12 @@
 		<% @news.each do |news| %>
 		<article>
 			<figure class="blog-thumbnails">
-				<%= image_tag news.image, :alt => news.image %>
+				<%= image_tag news.image.url(:thumb), :alt => news.image %>
 			</figure> <!-- /.blog-thumbnails -->
 			<div class="blog-text">
-				<h1><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></h1>
+				<h1><b><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></b></h1>
 				<p>
-					<%= truncate(news.content, length: 300, separator: ' ' ) %>
+					<%= truncate (sanitize news.content, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", ""), length: 300, separator: ' ', omission: '... (continued)' %>
 				</p>
 
 

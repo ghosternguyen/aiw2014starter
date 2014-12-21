@@ -13,7 +13,11 @@
  * require_tree .
  * require_self
  *= require bootstrap.min
+ *= require style
  *= require font-awesome.min
  *= require bootstrap-theme.min
- *= require style
  */
+body {
+	font-size: 13px;
+}
+

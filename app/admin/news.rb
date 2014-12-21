@@ -12,11 +12,15 @@ ActiveAdmin.register News do
     column :updated_at 
     actions
   end 
-  show do
+  show do |post|
     attributes_table do
       row :title
-      row :content
-      row :image
+      row :content do
+        raw post.content
+      end
+      row :image do
+        image_tag(post.image.url(:thumb))
+      end
       row :credit
     end
   end 
@@ -28,7 +32,7 @@ ActiveAdmin.register News do
       f.input :credit
       f.input :image, :as => :file, :hint => f.object.image.present? \
         ? f.template.image_tag(f.object.image.url(:thumb))
-        : f.template.content_tag(:span, "No image yet")
+        : f.template.content_tag(:span, "No Image yet")
       f.input :image_cache, :as => :hidden
      end
     f.actions

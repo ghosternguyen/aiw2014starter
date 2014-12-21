@@ -12,17 +12,21 @@ ActiveAdmin.register Slide do
     actions
   end
 
-  show do
+  show do |post|
     attributes_table do
       row :title
-      row :photo
+      row :photo do
+        image_tag(post.photo.url(:thumb))
+      end
     end
   end
 
   form :html => {:multipart => true} do |f|
     f.inputs "Add/Edit Slide" do
       f.input :title, required: true
-      f.input :photo, :as => :file
+      f.input :photo, :as => :file, :hint => f.object.photo.present? \
+      ? f.template.image_tag(f.object.photo.url(:thumb))
+      : f.template.content_tag(:span, "No Image yet")
     end
     f.actions
   end
