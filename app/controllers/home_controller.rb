@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     	@recentposts = @olderposts.limit(3)
 		@news = News.all
 		@firstnews = @news.order("created_at desc").limit(1)
-		@under1stnews = @news.order("created_at desc").limit(5).offset(1)
+		@under1stnews = @news.order("created_at desc").limit(4).offset(1)
 		@lastupdate = News.all.order('created_at DESC').limit(1)
 		@slide = Slide.all
 		@firstslide = @slide.order("created_at desc").limit(1)
