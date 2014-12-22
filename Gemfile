@@ -60,3 +60,5 @@ gem 'simple_form', '~> 3.0.0.rc'
 # }
 
 gem 'ckeditor'
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'

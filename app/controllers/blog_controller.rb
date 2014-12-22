@@ -5,8 +5,7 @@ class BlogController < ApplicationController
   def post
     @men_cat = Category.all
     @bar_cat = @men_cat.limit(6)
-    @posts = Post.all
-    @posts = Post.includes(:category)
+    @posts = Post.all.page(params[:page]).per(5)
     @popularposts = Post.all.limit(3).shuffle
     @olderposts = Post.all.order('created_at DESC').limit(6).offset(1)
     @recentposts = @olderposts.limit(3)
@@ -28,9 +27,9 @@ class BlogController < ApplicationController
     @men_cat = Category.all
     @bar_cat = Category.all.limit(6)
     @category = Category.find(params[:category_id])
-    @posts = @category.post.order('created_at DESC').limit(6)
+    @posts = @category.post.order('created_at DESC')
     @firstpost = @posts.limit(1)
-    @under1stpost = @posts.offset(1).shuffle
+    @under1stpost = Kaminari.paginate_array(@posts.offset(1)).page(params[:page]).per(5)
     @popularposts = Post.all.limit(3).shuffle
     @olderposts = Post.all.order('created_at DESC').limit(6).offset(1)
     @recentposts = @olderposts.limit(3)

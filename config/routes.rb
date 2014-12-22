@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
- root 'home#index'
+  root 'home#index'
 
   get 'home/index'
   get 'home/news'
@@ -26,5 +26,8 @@ Rails.application.routes.draw do
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users  
+  devise_for :users
+
+  get 'admin/posts'
+  get 'admin/news'  
 end

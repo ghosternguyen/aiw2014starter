@@ -21,7 +21,6 @@
 
 						<ul class="right-top-menu pull-right">
 							<li><%= link_to "Đăng Nhập", new_admin_user_session_path %></li>
-							<li><%= link_to "Đăng Ký", new_admin_user_session_path %></li>
 							<li>
 								<%= form_tag(home_search_path, :method => "get", :class => 'form-inline') do %>
 									<%= text_field_tag :search, params[:search], placeholder: "Tìm Kiếm?" %>
