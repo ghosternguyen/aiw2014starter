@@ -12,7 +12,7 @@
 			<div class="ccr-thumbnail"><%= image_tag post.image, :alt => post.image %></div>
 			<article>
 				<h4><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h4>
-				<%= truncate(post.body, length: 300, separator: ' ' ) %>
+				<%= truncate (sanitize post.body, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", " ").gsub("&quot;", '"').gsub("&bull;", ' ').gsub("&times;", 'x'), length: 300, separator: ' ', omission: '... (continued)' %>
 				<div class="like-comment-readmore">
 
 					<%= link_to "Read More", {:action => 'post_detail', :id => post.id}, :class => "read-more" %>
@@ -29,7 +29,7 @@
 					<%= image_tag post.image, :alt => post.image %>
 					<p><%= link_to "Read More", {:action => 'post_detail', :id => post.id} %></p>
 				</div>
-				<h5><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h5>
+				<h6><b><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></b></h6>
 			</li>
 			<% end %>
 		</ul>
@@ -60,13 +60,13 @@
 	<section id="sidebar-older-post">
 			<div class="ccr-gallery-ttile">
 				<span></span> 
-				<p><strong>Older Post</strong></p>
+				<p><strong>Other Products</strong></p>
 			</div> <!-- .ccr-gallery-ttile -->
 			<ul>
-				<% @recentposts.each do |post| %>
+				<% @olderposts.each do |post| %>
 				<li>
-					<%= image_tag post.image, :alt => post.image %>
-					<%= link_to post.title, blog_post_path(:id => post.id) %>
+					<%= image_tag post.image.url(:thumb), :alt => post.image %>
+					<b><%= link_to post.title, blog_post_path(:id => post.id) %></b>
 					<div class="date-like-comment">
 						<span class="date"><%= post.created_at %></span>
 					</div>

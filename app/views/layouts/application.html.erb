@@ -166,7 +166,7 @@
 					<ul>
 						<% @popularposts.each do |post| %>
 						<li>
-							<%= image_tag post.image, :alt => post.image %>
+							<%= image_tag post.image.url(:thumb), :alt => post.image %>
 							<%= link_to post.title, blog_post_path(:id => post.id) %>
 						</li>
 						<% end %>
@@ -178,7 +178,7 @@
 					<ul>
 						<% @recentposts.each do |post| %>
 						<li>
-							<%= image_tag post.image, :alt => post.image %>
+							<%= image_tag post.image.url(:thumb), :alt => post.image %>
 							<%= link_to post.title, blog_post_path(:id => post.id) %>
 						</li>
 						<% end %>

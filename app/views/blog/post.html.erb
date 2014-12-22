@@ -13,9 +13,9 @@
 					<%= image_tag post.image.url(:thumb), :alt => post.image %>
 				</figure> <!-- /.blog-thumbnails -->
 				<div class="blog-text">
-					<h1><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h1>
+					<h1><b><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></b></h1>
 					<p>
-						<%= truncate (sanitize body.post, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", ""), length: 300, separator: ' ', omission: '... (continued)' %>
+						<%= truncate (sanitize post.body, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", " ").gsub("&bull;", ""), length: 300, separator: ' ', omission: '... (continued)' %>
 					</p>
 
 					<div class="meta-data">					
@@ -53,13 +53,13 @@
 		<section id="sidebar-older-post">
 			<div class="ccr-gallery-ttile">
 				<span></span> 
-				<p><strong>Older Post</strong></p>
+				<p><strong>Other Products</strong></p>
 			</div> <!-- .ccr-gallery-ttile -->
 			<ul>
-				<% @recentposts.each do |post| %>
+				<% @olderposts.each do |post| %>
 				<li>
-					<%= image_tag post.image, :alt => post.image %>
-					<%= link_to post.title, blog_post_path(:id => post.id) %>
+					<%= image_tag post.image.url(:thumb), :alt => post.image %>
+					<b><%= link_to post.title, blog_post_path(:id => post.id) %></b>
 					<div class="date-like-comment">
 						<span class="date"><%= post.created_at %></span>
 					</div>
