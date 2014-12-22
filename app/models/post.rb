@@ -1,5 +1,12 @@
 class Post < ActiveRecord::Base
 	belongs_to :category
+
+	IMAGE_SIZES = {
+		:default => [1024, 1024],
+		:mini => [370, 250],
+		:thumb => [228, 180]
+	}
+
 	mount_uploader :image, AttachmentUploader
 
 	def self.search(query)

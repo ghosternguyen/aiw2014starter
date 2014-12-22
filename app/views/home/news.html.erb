@@ -9,7 +9,7 @@
 		<% @news.each do |news| %>
 		<article>
 			<figure class="blog-thumbnails">
-				<%= image_tag news.image.url(:thumb), :alt => news.image %>
+				<%= image_tag news.image.url(:mini), :alt => news.image %>
 			</figure> <!-- /.blog-thumbnails -->
 			<div class="blog-text">
 				<h1><b><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></b></h1>
@@ -54,7 +54,7 @@
 	<section id="sidebar-older-post">
 			<div class="ccr-gallery-ttile">
 				<span></span> 
-				<p><strong>Other Products</strong></p>
+				<p><strong>Các sản phẩm khác</strong></p>
 			</div> <!-- .ccr-gallery-ttile -->
 			<ul>
 				<% @olderposts.each do |post| %>
@@ -73,7 +73,7 @@
 	</br>
 		<section id="sidebar-video-post">
 			<div class="ccr-gallery-ttile">
-				<p><strong>Watch news our videos</strong></p>
+				<p><strong>Xem ngay những sản phẩm mới của Apple</strong></p>
 			</div> <!-- .ccr-gallery-ttile -->
 
 			<div class="sidebar-video">

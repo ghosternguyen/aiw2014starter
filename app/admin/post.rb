@@ -1,49 +1,46 @@
 ActiveAdmin.register Post do
-  menu :parent => "Manage Blog"
+  menu :parent => "Quản lý Chung", :label => "Quản lý Sản Phẩm"
 
   permit_params :category_id, :title, :body, :description, :image
 
-  index do
+  index :title => 'Sản Phẩm' do
     selectable_column
-    column :title, :sortable => :title do |post|
+    column 'Tên Sản Phẩm', :title, :sortable => :title do |post|
       link_to post.title, [ :admin, post]
     end
-    column :category do |post|
+    column 'Tên Danh Mục', :category do |post|
       link_to post.category.name, [ :admin, post]
     end
-    column :created_at
-    column :updated_at 
+    column 'Thời gian tạo', :created_at
+    column 'Thời gian cập nhật', :updated_at 
     actions
   end 
 
   show do |post|
     attributes_table do
-      row :title
-      row :category do
+      row('Sản Phẩm') { post.title }
+      row('Danh Mục') do
         post.category.name
       end
-      row :body do
+      row 'Nội Dung', :body do
         raw post.body
       end
-      row :image do
+      row 'Hình Ảnh', :image do
         image_tag(post.image.url(:thumb))
       end
     end
   end 
 
   form :html => {:multipart => true} do |f|
-    f.inputs "Add/Edit Post" do
-      f.input :category_id, :as => :select, :collection => Category.all, :label => "Category"
-      f.input :title, required: true
-      f.input :body, required: true, :as => :ckeditor
-      f.input :image, :as => :file, :hint => f.object.image.present? \
+    f.inputs "Thêm/Sửa Sản Phẩm" do
+      f.input :category_id, :as => :select, :collection => Category.all, :label => "Danh Mục"
+      f.input :title, required: true, :label => "Sản Phẩm"
+      f.input :body, required: true, :as => :ckeditor, :label => "Nội Dung"
+      f.input :image, :as => :file, :label => "Hình Ảnh", :hint => f.object.image.present? \
       ? f.template.image_tag(f.object.image.url(:thumb))
-      : f.template.content_tag(:span, "No Image yet")
-      if f.object.image?
-        f.check_box :remove_image, :as => :boolean
-      end
+      : f.template.content_tag(:span, "Chưa có ảnh")
       f.input :image_cache, :as => :hidden
-      f.input :description
+      f.input :description, :label => "Miêu Tả"
     end
     f.actions
   end

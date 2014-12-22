@@ -4,7 +4,7 @@
 	
 
 	<div class="ccr-last-update">
-		<div class="update-ribon">Last Update</div> <!-- /.update-ribon -->
+		<div class="update-ribon">Mới nhất</div> <!-- /.update-ribon -->
 		<span class="update-ribon-right"></span> <!-- /.update-ribon-left -->
 		<div class="update-news-text" id="update-news-text">
 			<ul id="latestUpdate">  
@@ -27,7 +27,7 @@
 			<% @firstslide.each do |slide| %>
 			<div class="active item">
 				<div class="container slide-element">
-					<%= image_tag slide.photo, :alt => slide.photo %>
+					<%= image_tag slide.photo.url(:mini), :alt => slide.photo %>
 					<p><a href="#"><%= slide.title %></a></p>
 				</div> <!-- /.slide-element -->
 			</div> <!--/.active /.item -->
@@ -36,7 +36,7 @@
 			<% @under1stslide.each do |slide| %>
 			<div class="item">
 				<div class="container slide-element">
-					<%= image_tag slide.photo, :alt => slide.photo %>
+					<%= image_tag slide.photo.url(:mini), :alt => slide.photo %>
 					<p><a href="#"><%= slide.title %></a></p>
 				</div> <!-- /.slide-element -->
 			</div> <!--/.active /.item -->
@@ -139,7 +139,7 @@
 		<section id="sidebar-older-post">
 			<div class="ccr-gallery-ttile">
 				<span></span> 
-				<p><strong>Other Products</strong></p>
+				<p><strong>Các sản phẩm khác</strong></p>
 			</div> <!-- .ccr-gallery-ttile -->
 			<ul>
 				<% @olderposts.each do |post| %>
@@ -157,7 +157,7 @@
 		</br>
 		<section id="sidebar-video-post">
 			<div class="ccr-gallery-ttile">
-				<p><strong>Watch news our videos</strong></p>
+				<p><strong>Xem ngay những sản phẩm mới của Apple</strong></p>
 			</div> <!-- .ccr-gallery-ttile -->
 
 			<div class="sidebar-video">
@@ -177,14 +177,14 @@
 		</br>
 		<section id="ccr-contact-sidebar">
 			<p>
-				<span>Our Team</span>
+				<span>Nhóm của chúng tôi</span>
 			</p>
 			<address>
 				<p>
-					Address: Km 9, Nguyen Trai Street, Thanh Xuan District.
+					Địa Chỉ Km 9, Đường Nguyễn Trãi, Quận Thanh Xuân.
 				</p>
 				<p>
-					Ha Noi, Viet Nam
+					Hà Nội, Việt Nam
 				</p>
 				<p>
 					Phone:+084 - 973874452

@@ -9,7 +9,7 @@
 
 		<% @firstpost.each do |post| %>
 		<div class="ccr-category-featured">
-			<div class="ccr-thumbnail"><%= image_tag post.image, :alt => post.image %></div>
+			<div class="ccr-thumbnail"><%= image_tag post.image.url(:mini), :alt => post.image %></div>
 			<article>
 				<h4><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h4>
 				<%= truncate (sanitize post.body, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", " ").gsub("&quot;", '"').gsub("&bull;", ' ').gsub("&times;", 'x'), length: 300, separator: ' ', omission: '... (continued)' %>
@@ -60,7 +60,7 @@
 	<section id="sidebar-older-post">
 			<div class="ccr-gallery-ttile">
 				<span></span> 
-				<p><strong>Other Products</strong></p>
+				<p><strong>Các sản phẩm khác</strong></p>
 			</div> <!-- .ccr-gallery-ttile -->
 			<ul>
 				<% @olderposts.each do |post| %>
@@ -79,7 +79,7 @@
 	</br>
 		<section id="sidebar-video-post">
 			<div class="ccr-gallery-ttile">
-				<p><strong>Watch news our videos</strong></p>
+				<p><strong>Xem ngay những sản phẩm mới của Apple</strong></p>
 			</div> <!-- .ccr-gallery-ttile -->
 
 			<div class="sidebar-video">
@@ -99,14 +99,14 @@
 		</br>
 		<section id="ccr-contact-sidebar">
 			<p>
-				<span>Our Team</span>
+				<span>Nhóm của chúng tôi</span>
 			</p>
 			<address>
 				<p>
-					Address: Km 9, Nguyen Trai Street, Thanh Xuan District.
+					Địa Chỉ Km 9, Đường Nguyễn Trãi, Quận Thanh Xuân.
 				</p>
 				<p>
-					Ha Noi, Viet Nam
+					Hà Nội, Việt Nam
 				</p>
 				<p>
 					Phone:+084 - 973874452

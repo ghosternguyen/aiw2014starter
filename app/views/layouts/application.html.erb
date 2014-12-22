@@ -6,25 +6,25 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body>
+<body onload="startTime()">
 	<header id="ccr-header">
 		<section id="ccr-nav-top" class="fullwidth">
 			<div class="">
 				<div class="container">
 					<nav class="top-menu">
 						<ul class="left-top-menu">
-							<li><%= link_to "Home", home_index_path %></li>
-							<li><%= link_to "Products",  blog_post_path %></li>
-							<li><%= link_to "News",  home_news_path %></li>
-							<li><%= link_to "Contact",  contacts_new_path %></li>
+							<li><%= link_to "Trang Chủ", home_index_path %></li>
+							<li><%= link_to "Sản Phẩm",  blog_post_path %></li>
+							<li><%= link_to "Tin Tức",  home_news_path %></li>
+							<li><%= link_to "Liên Hệ",  contacts_new_path %></li>
 						</ul><!-- /.left-top-menu -->
 
 						<ul class="right-top-menu pull-right">
-							<li><%= link_to "Login", new_admin_user_session_path %></li>
-							<li><%= link_to "Register", new_admin_user_session_path %></li>
+							<li><%= link_to "Đăng Nhập", new_admin_user_session_path %></li>
+							<li><%= link_to "Đăng Ký", new_admin_user_session_path %></li>
 							<li>
 								<%= form_tag(home_search_path, :method => "get", :class => 'form-inline') do %>
-									<%= text_field_tag :search, params[:search], placeholder: "Search For Somethin?" %>
+									<%= text_field_tag :search, params[:search], placeholder: "Tìm Kiếm?" %>
 									<%= button_tag "", :name => nil  do %>
 										<i class="fa fa-search"></i>
 										<% end %>
@@ -71,25 +71,23 @@
 
 					<div class="collapse navbar-collapse ccr-nav-main">
 						<ul class="nav navbar-nav">
-							<li><%= link_to "Home", home_index_path, {:class => 'active'} %></li>
+							<li><%= link_to "Trang Chủ", home_index_path, {:class => 'active'} %></li>
 							<li class="dropdown">
-								<%= link_to "Apple News",  home_news_path %>
+								<%= link_to "Tin Tức Apple",  home_news_path %>
 							</li><!-- /.dropdown -->
-							<li class="dropdown"><a href="#">Category <i class="fa fa-caret-down"></i></a>
+							<li class="dropdown"><a href="#">Danh Mục <i class="fa fa-caret-down"></i></a>
 								<ul class="sub-menu">
 									<% @men_cat.each do |category| %>
 									<li><%= link_to category.name, blog_category_path(:category_id => category.id) %></li>
 									<% end %>
 								</ul><!-- /.sub-menu -->
 							</li><!--  /.dropdown -->
-							<li><%= link_to "Contact",  contacts_new_path %></li>
+							<li><%= link_to "Liên Hệ",  contacts_new_path %></li>
 						</ul> <!-- /  .nav -->
 					</div><!-- /  .collapse .navbar-collapse  -->
 
 					<div id="currentTime" class="pull-right current-time">
-						<i class="fa fa-clock-o"></i> 12:10 pm
-
-
+						<i class="fa fa-clock-o"></i>
 					</div><!-- / #currentTime -->
 
 				</div>	<!-- /.container -->
@@ -116,7 +114,7 @@
 
 					<div class="ccr-language">
 						<ul> 
-							<li>Language:</li>
+							<li>Ngôn Ngữ:</li>
 							<li><a href="#"><img src="<%= image_path("uk.png") %>" alt="UK">English</a></li>
 							<li><a href="#"><img src="<%= image_path("vn.png") %>" alt="France">Tiếng Việt</a></li>
 						</ul>
@@ -150,7 +148,7 @@
 		<div class="container">
 			<ul>
 				<li class="col-md-3">
-					<h5>About Us Group 15 - 6C11</h5>
+					<h5>Nhóm 15 - 6C11</h5>
 					<div class="about-us">
 						<p>Nguyễn Bá Thanh</p>
 						<p>Nguyễn Ngọc Tuyền</p>
@@ -162,7 +160,7 @@
 					
 				</li>
 				<li class="col-md-3">
-					<h5>Popular Post</h5>
+					<h5>Sản phẩm phổ biến</h5>
 					<ul>
 						<% @popularposts.each do |post| %>
 						<li>
@@ -174,7 +172,7 @@
 					
 				</li>
 				<li class="col-md-3">
-					<h5>Recent Post</h5>
+					<h5>Sản phẩm được thêm gần đây</h5>
 					<ul>
 						<% @recentposts.each do |post| %>
 						<li>
@@ -196,7 +194,7 @@
 						<a href="#">Ipod</a>
 						<a href="#">Power Mac</a>
 						<a href="#">Apple Watch</a>
-						<a href="#">Technology</a>
+						<a href="#">Công Nghệ</a>
 					</div>
 					
 				</li>
@@ -207,7 +205,7 @@
 	<footer id="ccr-footer">
 		<div class="container">
 			<div class="copyright">
-				&copy; 2014, Copyrights <a href="#">Group 15 - AIW 2014</a> - Hanoi University
+				&copy; 2014, Bản Quyền <a href="#">Nhóm 15 - AIW 2014</a> - Đại Học Hanoi
 			</div> <!-- /.copyright -->
 
 			<div class="footer-social-icons">
