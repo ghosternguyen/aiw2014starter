@@ -8,7 +8,7 @@ ActiveAdmin.register Post do
     column :title, :sortable => :title do |post|
       link_to post.title, [ :admin, post]
     end
-    column :category_id do |post|
+    column :category do |post|
       link_to post.category.name, [ :admin, post]
     end
     column :created_at
@@ -19,7 +19,9 @@ ActiveAdmin.register Post do
   show do |post|
     attributes_table do
       row :title
-      row :category_id
+      row :category do
+        post.category.name
+      end
       row :body do
         raw post.body
       end
@@ -28,8 +30,6 @@ ActiveAdmin.register Post do
       end
     end
   end 
-
-
 
   form :html => {:multipart => true} do |f|
     f.inputs "Add/Edit Post" do
@@ -40,7 +40,7 @@ ActiveAdmin.register Post do
       ? f.template.image_tag(f.object.image.url(:thumb))
       : f.template.content_tag(:span, "No Image yet")
       if f.object.image?
-        f.input :remove_image, :as => :boolean
+        f.check_box :remove_image, :as => :boolean
       end
       f.input :image_cache, :as => :hidden
       f.input :description

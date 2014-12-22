@@ -11,11 +11,3 @@ ActiveAdmin.register_page "Dashboard" do
     end
   end
 end
-
-# app/admin/calendar.rb
-ActiveAdmin.register_page "Calendar" do
-    menu priority: 2
-    content do
-        para "Hello World"
-    end
-end

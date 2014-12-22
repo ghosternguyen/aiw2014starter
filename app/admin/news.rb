@@ -11,7 +11,8 @@ ActiveAdmin.register News do
     column :created_at
     column :updated_at 
     actions
-  end 
+  end
+   
   show do |post|
     attributes_table do
       row :title
