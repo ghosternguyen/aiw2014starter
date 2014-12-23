@@ -1,12 +1,13 @@
-ActiveAdmin.register Post do
+ActiveAdmin.register Post, :as => "All Product" do
   menu :parent => "Quản lý Chung", :label => "Quản lý Sản Phẩm"
 
   permit_params :category_id, :title, :body, :description, :image
 
   index :title => 'Sản Phẩm' do
     selectable_column
+    column 'Strength ID', :id
     column 'Tên Sản Phẩm', :title, :sortable => :title do |post|
-      link_to post.title, [ :admin, post]
+      link_to post.title, [ :admin, post] if post.title.present? 
     end
     column 'Tên Danh Mục', :category do |post|
       link_to post.category.name, [ :admin, post]
