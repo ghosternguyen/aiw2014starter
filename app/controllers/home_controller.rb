@@ -22,7 +22,7 @@ class HomeController < ApplicationController
 
 
 	def news
-		@news = News.all.page(params[:page]).per(5)
+		@news = News.all.order('created_at DESC').page(params[:page]).per(5)
 		@men_cat = Category.all
 		@bar_cat = @men_cat.limit(6)
 		@popularposts = Post.all.limit(3).shuffle

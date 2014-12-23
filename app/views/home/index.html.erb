@@ -99,7 +99,7 @@
 				<div class="featured-world-news-img"><%= image_tag news.image, :alt => news.image %></div>
 				<div class="featured-world-news-post">
 					<h5><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></h5>
-					<%= truncate (sanitize news.content, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", " "), length: 300, separator: ' ', omission: '... (continued)' %>
+					<%= truncate (sanitize news.content, tags: %w(table tr td img), attributes: %w(id class style)), length: 500, separator: ' ', omission: '... (continued)', escape: false %>
 					<div class="like-comment-readmore">
 						<%= link_to "Read More", {:action => 'news_detail', :id => news.id}, :class => "read-more" %>
 					</div> <!-- /.like-comment-readmore -->
@@ -115,7 +115,7 @@
 						<%= image_tag news.image.url(:thumb), :alt => news.image %>
 						<p><%= link_to "Read More", {:action => 'news_detail', :id => news.id} %></p>
 					</div>
-					<h6><%= link_to truncate(news.title, :length => 30, separator: ' '), {:action => 'news_detail', :id => news.id} %></h6>
+					<h6><%= link_to truncate(news.title, :length => 50, separator: ' '), {:action => 'news_detail', :id => news.id} %></h6>
 				</li>
 				<% end %>
 			</ul>

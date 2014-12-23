@@ -13,13 +13,14 @@ Rails.application.routes.draw do
   get 'blog/post_detail'
   get 'blog/category'
 
-  post 'blog', to: 'blog#create', as: "blog_create_path"
-  post 'blog', to: 'blog#create', as: 'blog_create'
-  delete 'blog/:id', to: 'blog#destroy', as: 'blog_destroy'
+  namespace :admin do
+    resources :users
+    resources :posts
+    resources :news
+  end
 
   get 'contacts/new'
   post 'contacts', to: 'contacts#create', as: 'contacts_create'
-
 
 
   get 'home/sample'
@@ -28,6 +29,4 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
-  get 'admin/posts'
-  get 'admin/news'  
 end

@@ -14,7 +14,7 @@
 			<div class="blog-text">
 				<h1><b><%= link_to news.title, {:action => 'news_detail', :id => news.id} %></b></h1>
 				<p>
-					<%= truncate (sanitize news.content, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", " "), length: 300, separator: ' ', omission: '... (continued)' %>
+					<%= truncate (sanitize news.content, tags: %w(table tr td img), attributes: %w(id class style)), length: 500, separator: ' ', omission: '... (continued)', escape: false %>
 				</p>
 
 

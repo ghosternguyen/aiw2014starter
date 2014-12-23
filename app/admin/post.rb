@@ -1,4 +1,4 @@
-ActiveAdmin.register Post, :as => "All Product" do
+ActiveAdmin.register Post, :as => "Product" do
   menu :parent => "Quản lý Chung", :label => "Quản lý Sản Phẩm"
 
   permit_params :category_id, :title, :body, :description, :image

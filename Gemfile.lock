@@ -110,6 +110,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
+    htmlentities (4.3.2)
     i18n (0.7.0)
     inherited_resources (1.5.1)
       actionpack (>= 3.2, < 4.2)
@@ -226,6 +227,7 @@ DEPENDENCIES
   ckeditor
   coffee-rails (~> 4.0.0)
   devise
+  htmlentities (~> 4.3.2)
   jbuilder (~> 2.0)
   jquery-rails
   kaminari

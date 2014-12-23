@@ -12,7 +12,7 @@
 			<div class="ccr-thumbnail"><%= image_tag post.image.url(:mini), :alt => post.image %></div>
 			<article>
 				<h4><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></h4>
-				<%= truncate (sanitize post.body, tags: %w(table tr td), attributes: %w(id class style)).gsub(/&amp;/i,"&").gsub("&#39;", "'").gsub("&rsquo;", "'").gsub("&nbsp;", " ").gsub("&quot;", '"').gsub("&bull;", ' ').gsub("&times;", 'x'), length: 300, separator: ' ', omission: '... (continued)' %>
+				<%= truncate (sanitize post.body, tags: %w(table tr td), attributes: %w(id class style)), length: 500, separator: ' ', omission: '... (continued)', escape: false %>
 				<div class="like-comment-readmore">
 
 					<%= link_to "Read More", {:action => 'post_detail', :id => post.id}, :class => "read-more" %>
@@ -26,7 +26,7 @@
 			<% @under1stpost.each do |post| %>
 			<li>
 				<div class="ccr-thumbnail">
-					<%= image_tag post.image, :alt => post.image %>
+					<%= image_tag post.image.url(:mini), :alt => post.image %>
 					<p><%= link_to "Read More", {:action => 'post_detail', :id => post.id} %></p>
 				</div>
 				<h6><b><%= link_to post.title, {:action => 'post_detail', :id => post.id} %></b></h6>
